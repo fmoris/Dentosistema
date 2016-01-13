@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="dentosys">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Dentosis - Sistema de Gestion de Trabajos</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/Personalizados/base.css"></link>
+    <link rel="stylesheet" href="css/Personalizados/formularios.css"></link>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" media="all">
+	<link rel="stylesheet" href="css/Angular_ng-table/ng-table.min.css">
+    <link href="css/toaster/toaster.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/Personalizados/estilos.css">
+    <link rel="stylesheet" href="css/Personalizados/navegador.css">
+    <link rel="stylesheet" href="css/select/select.min.css">
+    <!-- Font Awesome -->
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <!-- Boostrap Switch -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>    
+    <!-- BLOCK UI CSS -->
+    <link rel="stylesheet" href="css/Angular_blockui/angular-block-ui.min.css"></link>    
+    <!-- Boostrap -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>    
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.0-rc.2/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.0-rc.2/angular-animate.min.js"></script>
+    <!-- Block UI -->
+    <script src="js/Angular_blockui/angular-block-ui.min.js"></script>
+	<!-- Tablas -->
+	<script src="js/Angular_ngtable/ng-table.min.js"></script>
+	<script src="js/Angular_ngtable/ng-table-export.src.js"></script>
+    <!-- Select -->
+    <script src="js/select/select.min.js"></script>
+    <!-- Librebrias Sistema -->    
+    <script src="js/App.js"></script>
+	<!-- toastr -->
+    <script src="js/toaster/toaster.js"></script>
+													<!-- CONTROLADORES -->
+    <!-- Header -->
+    <script src="sistema/header/header.js"></script>	
+
+    <!-- login -->
+    <script src="sistema/usuarios/login/login.js"></script>
+
+	<!-- Busca Ordenes -->
+	<script src="sistema/busquedadeOrden/buscaOrdenes.js"></script>
+    <script src="sistema/busquedadeOrden/buscaOrdenesOdontologo.js"></script>
+    <script src="sistema/busquedadeOrden/buscaOrdenesOrigen.js"></script>
+    <script src="sistema/busquedadeOrden/buscaOrdenesAdmin.js"></script>
+
+    <!-- TESTING (EVENTUALMENTE REMOVER) 
+    <script src="sistema/ordenes/protesisFija/editarOrden.js"></script>
+    -->
+
+    <!-- Protesis Fija -->
+    <script src="sistema/ordenes/protesisFija/protesisFija.js"></script>
+    <script src="sistema/ordenes/protesisFija/editarProtesisFija.js"></script>
+
+    <!-- Colados -->
+    <script src="sistema/ordenes/colados/colados.js"></script>
+    <script src="sistema/ordenes/colados/editarColados.js"></script>
+
+    <!-- Removibles -->
+    <script src="sistema/ordenes/removibles/removibles.js"></script>
+    <script src="sistema/ordenes/removibles/editarRemovibles.js"></script>
+
+    <!-- Nuevo Usuario -->
+    <script src="sistema/usuarios/creacion/nuevoUsuario.js"></script>           
+
+    <!-- Mantencion -->
+    <script src="sistema/mantencion/ejecutores/ejecutor.js"></script>
+    <script src="sistema/mantencion/ejecutores/crear/nuevoEjecutor.js"></script>
+    <script src="sistema/mantencion/ejecutores/editar/editarEjecutores.js"></script>
+
+    <script src="sistema/mantencion/odontologos/crear/crearOdontologo.js"></script>
+    <script src="sistema/mantencion/odontologos/Odontologo.js"></script>
+
+    <script src="sistema/mantencion/origenes/Origen.js"></script>
+    <script src="sistema/mantencion/origenes/crear/crearOrigen.js"></script>
+
+    <!-- Perfiles -->
+    <script src="sistema/mantencion/perfiles/ActivarOdontologo/importarOdontologo.js"></script>
+    <script src="sistema/mantencion/perfiles/ActivarOrigen/importarOrigen.js"></script>
+
+
+    <!-- Perfil -->
+    <script src="sistema/usuarios/perfil/perfil.js"></script>
+    <script src="sistema/usuarios/perfil/actualizarPerfil.js"></script>
+    <script src="sistema/usuarios/perfil/cambiarPassword.js"></script>
+
+    <!-- Pagos -->
+    <script src="sistema/pagos/pagos.js"></script>
+    <script src="sistema/pagos/pagarTrabajoOdontologo.js"></script>
+    <script src="sistema/pagos/pagarTrabajoOrigen.js"></script>
+
+    <!-- Aranceles -->
+    <script src="sistema/aranceles/aranceles.js"></script>
+    <script src="sistema/aranceles/origenes/nuevoOrigen.js"></script>
+    <script src="sistema/aranceles/origenes/editarOrigen.js"></script>
+    <script src="sistema/aranceles/labores/nuevaLabor.js"></script>
+    <script src="sistema/aranceles/labores/editarLabor.js"></script>
+    <script src="sistema/aranceles/etapas/nuevaEtapa.js"></script>
+    <script src="sistema/aranceles/etapas/editarEtapa.js"></script>
+    <script src="sistema/aranceles/reordenarLabores/reordenarLabores.js"></script>
+
+    <!-- Informes -->
+    <script src="sistema/informes/informes.js"></script>
+    <script src="sistema/informes/impagosOrigen/impagosOrigen.js"></script>
+    <script src="sistema/informes/impagosOdontologo/impagosOdontologo.js"></script>
+    <script src="sistema/informes/trabajosEjecutor/trabajosEjecutor.js"></script>
+    <script src="sistema/informes/pagosPorFecha/pagosPorFecha.js"></script>
+    
+    <!-- Convenios -->  
+    <script src="sistema/aranceles/convenios/nuevoConvenio.js"></script>
+    <script src="sistema/aranceles/convenios/editarConvenio.js"></script>
+
+    <!-- Mantencion -->
+    <script src="sistema/mantencion/mantencion.js"></script>
+
+    <!-- ESTADOS -->
+    <script src="sistema/mantencion/estados/estados.js"></script>
+    <script src="sistema/mantencion/estados/estadoOrden/nuevoEstado.js"></script>
+    <script src="sistema/mantencion/estados/estadoOrden/editarEstado.js"></script>
+    <script src="sistema/mantencion/estados/estadoTrabajo/nuevoEstado.js"></script>
+    <script src="sistema/mantencion/estados/estadoTrabajo/editarEstado.js"></script>
+
+    <!-- Metales -->
+    <script src="sistema/aranceles/metales/editarMetales.js"></script>
+    <script src="sistema/aranceles/metales/nuevoMetal.js"></script>
+
+ 
+</head>
+    <body data-ng-cloak>
+        <div id="menu" ng-controller="headerController" data-ng-include src=" 'sistema/header/header.html' "></div>
+        <div class="container" data-ng-view></div>
+    </body>
+</html>

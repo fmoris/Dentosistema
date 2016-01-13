@@ -1,0 +1,80 @@
+<style type="text/css">
+  h3{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h2 {
+    text-align: center;
+  }
+  .color {
+    background-color: lightgrey;
+    margin: 1px solid black;
+  }
+  .editar{
+    border-bottom: 1px solid black;
+  }
+  .nombreetapa{
+    text-align: center;
+  }
+  .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #D3D3D3;
+  }
+</style>
+<div class="container">          
+  <form ng-submit="ordenarLabores()" name="OrigenForm">
+    <div class="account-wall">
+    <h1>Reordenar Labores </h1>       
+      <div ng-repeat="clasi in etapas track by $index">
+        <h2 id = "{{clasi.nombre}}" >{{clasi.nombre | uppercase}}</h2>        
+        <div ng-repeat="etapa in clasi.etapas track by $index" class="account-wall color" >
+          <div class="row">    
+            <h2 class= "text-center">{{etapa.nombre}}</h1>             
+          </div>            
+           <div class="row">
+            <div class="col-md-6"><h3>Nombre</h3></div>
+            <div class="col-md-4"><h3>Etapa Destino</h3></div>
+            <div class="col-md-2"><h3>Editar</h3></div>                
+           </div>
+            
+          <div ng-repeat="labor in etapa.labores track by $index" >
+            <div class="row editar">
+              <div class="col-md-6">
+                <h4>{{labor.nombre}}</h4> 
+              </div>
+              <div class="col-md-4"><select class="form-control input-lg"
+               ng-model="labor.etapa"
+               ng-options="item.idEtapa as item.nombre 
+                           group by item.clasiNom 
+                           disable when item.clasi != $parent.$parent.clasi.idClasi
+                           for item in listaEtapas"
+               ng-disabled="!labor.editar">
+            <option value="" disabled selected>Seleccione una Etapa</option>    
+          </select>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary btn-block" ng-click="editar(labor);" type="button">
+                   Activar Cambio</button>
+                </div>
+            </div>
+          </div>                    
+        </div>
+      </div>
+    </div>
+    <div id ="Guardado" class ="account-wall">
+      <h3>Guardar Cambios</h3>
+      <button class="btn btn-lg btn-primary btn-block" ng-disabled="!OrigenForm.$valid" type="submit">       
+        Mover Labores
+      </button>
+    </div>
+  </form>  
+</div>
+
+<div class="row" data-ng-include src=" 'segmentos/navegadorGoogle/aranceles.html' ">
+    
+</div>     

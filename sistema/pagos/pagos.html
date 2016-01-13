@@ -1,0 +1,52 @@
+<div class="container">
+	<form ng-submit="envioOdontologo()" >
+      <div class="account-wall">         
+          <h1 class="text-center login-title">PAGOS POR ODONTOLOGO</h1>
+          <div class="row">
+          	<div class="col-md-12">	        
+				<select class="form-control input-lg"
+						ng-model="odontologo.id"						
+					    ng-options="item.id*1 as item.nombre for item in listaOdontologo"
+					    required> 
+					    <option value="" selected disabled>Seleccione Odontologo</option>
+					                      
+              </select>
+	        </div>
+          </div>
+          <div class="row">
+
+			   <div class="col-md-12">
+
+				  <button class="btn btn-lg btn-primary btn-block" type="submit">
+					  Ir a Pagos
+				  </button>
+			  </div>
+		  </div>	  
+       </div>
+    </form>
+    <form ng-submit="envioOrigen()" id="pagoOrigenForm">
+      <div class="account-wall">         
+          <h1 class="text-center login-title">PAGOS POR ORIGEN</h1>
+          <div class="row">
+          	<div class="col-md-12">	        
+				<select class="form-control input-lg"
+						ng-model="origen.id"						
+					    ng-options="item.id*1 as item.nombre for item in listaOrigen"
+					    required>
+					    <option value="" selected disabled>Seleccione Origen</option>                 
+              </select>
+	        </div>
+          </div>
+          <div class="row">
+			   <div class="col-md-12">
+				  <button class="btn btn-lg btn-primary btn-block" type="submit">
+					  Ir a Pagos
+				  </button>
+
+			  </div>
+
+		  </div>	  
+
+       </div>
+    </form>
+</div>

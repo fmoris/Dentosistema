@@ -1,0 +1,92 @@
+<div class="container">
+	<form ng-submit="envio()" class="form-horizontal" name="formconvenio">
+      <div class="account-wall">         
+          <h1 class="text-center login-title">NUEVO CONVENIO</h1> 
+		  <div class="row">
+			<div class="col-md-3"> 
+          		<label class="custom-size">Nombre:</label>
+			</div>
+			<div class="col-md-9">  
+          		<input name="name" type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="convenio.nombre" placeholder="Nombre Convenio" required> 
+			</div>	
+		  </div>
+		  
+		  <div class="row">
+			  <div class="col-md-3"> 
+			  	<label class="custom-size">Origen:</label>
+			  </div>
+			  <div class="col-md-9"> 
+			  	<select class="form-control input-lg" required
+						ng-model="convenio.origen"						
+					    ng-options="item.id*1 as item.nombre for item in listaOrigen">
+                 <option value="" disabled selected>Seleccione un Origen</option>       
+              </select>
+			  </div>
+		  </div>
+          
+           <div class="row">
+			  <div class="col-md-3"> 
+			  	<label class="custom-size">Clasificacion:</label>
+			  </div>
+			  <div class="col-md-9"> 
+			  	<select class="form-control input-lg" required
+						ng-model="convenio.clasi"						
+					    ng-change="listaLabores(convenio.clasi)">
+				 <option value="" disabled selected>Seleccione Clasificacion</option>               
+                 <option value="1">Protesis Fija </option>  
+                 <option value="2">Colados</option>  
+                 <option value="3">Removibles</option>  
+              </select>
+			  </div>
+		  </div>
+          
+       <!--   <div class="row">
+			  <div class="col-md-3"> 
+			  	<label class="custom-size">Agregar Nueva Labor:</label>
+			  </div>
+			  <div class="col-md-9"> 
+			  	  <button class="btn btn-lg btn-primary btn-block" ng-click = "agregarLabor()" type="Button">Agregar Labor</button>
+			  </div>
+		  </div>
+          
+          <div ng-repeat="labor in convenio.labores">
+            <div class="row">
+			  <div class="col-md-3"> 
+			  	<label class="custom-size">Seleccionar Labor:</label>
+			  </div>
+			  <div class="col-md-9"> 
+			  	  <select class="form-control input-lg" required
+						ng-model="labor.id"						
+					    ng-options="item.id*1 as item.nombreLabor group by item.nombreEtapa for item in labores ">
+                 <option value="" disabled selected>Seleccione una Labor</option>       
+              </select>
+			  </div>
+		    </div>
+          </div>-->
+          
+          
+           <div class="row">
+			<div class="col-md-3"> 
+          		<label class="custom-size">Precio:</label>
+			</div>
+			<div class="col-md-9">  
+          		<input name="name" type="text" pattern="[0-9]{1,99}" class="form-control input-lg" ng-model="convenio.precio" placeholder="Ingrese el Precio" required> 
+			</div>	
+		  </div>
+          
+          
+          
+		
+        
+          <div class="row">
+          <div class="col-md-3">            		
+			</div>
+			   <div class="col-md-9">
+				  <button class="btn btn-lg btn-primary btn-block" ng-disabled="!formconvenio.$valid" type="submit">
+					  Guardar
+				  </button>
+			  </div>
+		  </div>	  
+  </div>
+		</form>
+</div>

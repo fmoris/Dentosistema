@@ -1,0 +1,139 @@
+<style>
+    a {
+    font-size: 22px;
+    }
+    
+</style>
+
+<!--<nav class="navbar navbar-top navbar-inverse navbar-fixed-top" role="navigation">-->
+<nav class="navbar navbar-inverse" role="navigation">
+
+    <div class="container">
+
+        <button class="navbar-toggle" data-target=".navHeaderCollapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" rel="home" href="#/perfil" title="Volver a Perfil" id="Top">
+        <img style="max-width:100px; margin-top: -7px;"
+             src="sistema/img/logos/logo_header.jpg">
+        </a>
+
+        <div class="collapse navbar-collapse navHeaderCollapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <!-- <li ng-show="tipoUsuario()">
+                    <a href="#/protesisFija" ng-class="{ active: estaActivo('/') }" >Protesis Fija</a>
+                </li>                
+                <li ng-show="tipoUsuario()">
+                    <a href="#/colados">Colados</a>
+                </li ng-show="tipoUsuario()">
+                <li ng-show="tipoUsuario()">
+                    <a href="#/removibles">Removibles</a>
+                </li>
+                </li> -->
+
+                <li ng-show="!tipoUsuario()">
+                    <a href="#/buscaOrdenes">Buscar Ordenes</a>
+                </li>
+
+                <li class="dropdown" ng-show="tipoUsuario()">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ordenes<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li class="dropdown-header">Buscar Ordenes</li>
+                      <li><a href="#/buscaOrdenes">Buscar Ordenes</a></li>                    
+                      <li class="dropdown-header">Nueva Orden</li>
+                      <li><a href="#/protesisFija">Protesis Fija</a></li>
+                      <li><a href="#/colados">Colados</a></li>
+                      <li><a href="#/removibles">Removibles</a></li>                               
+                  </ul>
+                </li>                           
+
+                <!-- <li ng-show="tipoUsuario()">
+                    <a href="#/convenios">Convenios</a>
+                </li> -->
+
+                <!-- <li ng-show="tipoUsuario()">
+                  <a href="#/aranceles">Aranceles</a>                 
+                </li> -->
+                
+                <li ng-show="tipoUsuario()">
+                    <a href="#/pagos">Pagos</a>
+                </li>
+
+                <li ng-show="tipoUsuario()">
+                    <a href="#/informes">Informes</a>
+                </li>
+
+
+                <li class="dropdown" ng-show="tipoUsuario()">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mantencion <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li class="dropdown-header">Aranceles</li>
+                      <li><a href="#/aranceles">Aranceles</a></li>
+                      <li class="divider"></li>                   
+                      <li class="dropdown-header">Activar Usuarios Antiguos</li>
+                      <li><a href="#/registro">Activar Usuarios Antiguos</a></li> 
+                      <li class="divider"></li> 
+                      <li class="dropdown-header">Mantencion</li>
+                      <li><a href="#/mantencion">Mantencion de Usuarios</a></li>                      
+                      <li><a href="#/estados">Mantencion de Estados</a></li>
+                      <!-- <li><a href="#/Odontologo">Odontologos</a></li>                      
+                      <li><a href="#/Origen">Origen</a></li>
+                      <li><a href="#/Ejecutor">Ejecutor</a></li>     -->                          
+                  </ul>
+                </li>
+
+                
+
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{nombre}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">                      
+                      <li class="dropdown-header">Datos Personales</li>                       
+                      <li><a href="#/perfil">Mi Perfil</a></li>                                        
+                      <li class="divider"></li>                      
+                      <li><a href="" ng-click="logout()">Cerrar Sesion</a></li>                
+                    </ul>
+                    
+                </li>                
+            </ul>  
+        </div>
+    <toaster-container toaster-options="{'time-out': 6000, 'close-button':true}"></toaster-container>
+
+    <div class="modal fade" data-backdrop="static" id="loginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+           <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <h4 class="modal-title">Inicie Sesion</h4>
+          </div>
+          <div class="modal-body">
+            <img class="profile-img" src="sistema/img/logos/logo_login.jpg" alt="">
+              <h1 class="text-center login-title">Bienvenido al Sistema Dentosys</h1>
+            <form ng-submit="login()" class="form-signin" name="loginForm">       
+              <input id="usuario" type="email" name="email" class="form-control" ng-model="login.correo" placeholder="Email" autofocus required>
+              <input id="password" type="password" class="form-control" ng-model="login.password" placeholder="Password" required>
+              <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="!loginForm.$valid">
+                  Iniciar Sesion
+              </button>            
+              <!--<label class="checkbox pull-left">
+                <input type="checkbox" value="remember-me"> Recordarme
+              </label>-->
+              <!--<a href="#" class="pull-right need-help">Necesita Ayuda? </a><span class="clearfix"></span>
+              <a href="#/registro" class="text-center new-account">Crear una Cuenta </a>-->
+            </form>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="row" data-ng-include src=" 'segmentos/navegadorGoogle/generico.html' ">    
+    </div>
+
+  </div>
+</nav>
+
+
+  

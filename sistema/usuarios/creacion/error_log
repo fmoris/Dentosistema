@@ -1,0 +1,2 @@
+[21-Jul-2015 21:48:23 UTC] PHP Warning:  mysql_close() expects parameter 1 to be resource, boolean given in /home/dentosis/public_html/dentosistema/sistema/usuarios/creacion/guardaOrigen.php on line 142
+[23-Jul-2015 18:51:48 UTC] PHP Fatal error:  Class 'SMTP' not found in /home/dentosis/public_html/trabajos/sistema/usuarios/creacion/class.phpmailer.php on line 1291

@@ -1,0 +1,60 @@
+<div class="container">
+	<form ng-submit="envio()" name="origenForm" >
+      <div class="account-wall">         
+          <h1 class="text-center login-title">CREAR ORIGEN</h1>          
+		  <div class="row">
+			<div class="col-md-3"> 
+          		<label class="custom-size">Institucion:</label>
+			</div>
+			<div class="col-md-9">
+          		<input type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="origen.institucion" placeholder="Institucion" required> 
+			</div>
+		  </div>		   
+		  <div class="row">
+			  <div class="col-md-3">
+			  	<label class="custom-size">Direccion:</label>
+			  </div>
+			  <div class="col-md-9">
+			  	<input type="text" class="form-control input-lg" ng-model="origen.direccion" placeholder="Direccion"  required>
+			  </div>
+		  </div>		  
+          <div class="row">
+			  <div class="col-md-3">
+			  	<label class="custom-size">Telefono:</label>
+			  </div>
+			  <div class="col-md-9"> 
+			  	<input type="text" name="phone" pattern="[0-9]{8,9}" class="form-control input-lg" ng-model="origen.telefono" placeholder="Telefono"  required>
+			  </div>	  
+		  </div>		  
+		  <div class="row">
+			<div class="col-md-3">  
+          		<label class="custom-size">Contacto:</label>
+			</div>
+			<div class="col-md-9">  
+          		<input type="text" name="name" class="form-control input-lg" ng-model="origen.contacto" placeholder="Contacto"  required>
+			</div>
+		  </div>
+		  <div class="row">
+		    <div class="col-md-3"> 
+		      <label class="custom-size">Activar:</label>
+		    </div>
+		    <div class="col-md-9"> 
+		      <input type="checkbox" class="form-control input-lg" ng-model="origen.activar" ng-true-value="'1'" ng-false-value="'0'">
+		    </div>
+		  </div>  
+          <div class="row">
+          <div class="col-md-3">            		
+			</div>
+			   <div class="col-md-9">
+				  <button class="btn btn-lg btn-primary btn-block" ng-disabled="!origenForm.$valid" type="submit">
+					  Guardar
+				  </button>
+			  </div>
+		  </div>
+
+  </div>
+
+		</form>
+
+</div>
+

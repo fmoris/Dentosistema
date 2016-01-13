@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="sistema/informes/informes.css"></link>
+
+<div class="container">    
+  <div class="row">          
+    <div class="account-wall">           
+      <h1 class="text-center">Trabajos Impagos</h1>                  
+         <div class="row">
+	         <div class="col-md-12">				      
+              <a href="#/impagosOrigen" type="button" class="btn btn-primary btn-lg btn-block">Impagos Origen</a>
+              <a href="#/impagosOdontologo" type="button" class="btn btn-primary btn-lg btn-block">Impagos Odontologo</a>
+			     </div>
+		    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="account-wall">
+      <form ng-submit="envioEjecutor()" class="form-inline" name="impagoEjecutor">                   
+            <h1 class="text-center">Trabajos por Ejecutor</h1>  
+                   
+            <div class="row">
+               <div class="col-md-12">                
+                <a href="#/imprimirTrabajosEjecutor" type="button" class="btn btn-primary btn-lg btn-block">Trabajos Ejecutor</a>
+               </div>
+            </div>         
+      </form>
+    </div>
+  </div>
+    
+ <div class="row">
+    <form ng-submit="envioPagosFecha()" class="form-inline" name="pagosFecha">
+      <div class="account-wall">           
+          <h1 class="text-center">Pagos por Fecha</h1>                        
+          <div class="row">
+             <div class="col-md-12">               
+                <a href="#/imprimirPagosPorFecha" type="button" class="btn btn-primary btn-lg btn-block">Pagos por Fecha</a>
+             </div>
+          </div>                 
+      </div> 
+    </form>
+  </div>
+  
+</div>
+

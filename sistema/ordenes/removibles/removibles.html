@@ -1,0 +1,210 @@
+<style>
+.custom-size {
+    font-size: 18px;
+}
+.row {
+    margin-bottom: 5px;
+}
+.account-wall {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;    
+}
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-weight: bold;
+}
+p {
+    text-align: center;
+    text-transform: capitalize;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+</style>
+<div class="container"> 
+    <!--<p>Orden: {{ pfija.idOrden }}</p>
+    <p>Filiacion: {{ pfija.filiacion }}</p>
+    <p>Odontologo: {{ pfija.odontologo }}</p>
+    <p>Paciente: {{ pfija.paciente }}</p>
+    <p>Observacion: {{ pfija.observacion }}</p>
+    <p>Origen{{ pfija.origen }}</p>
+    <p>Estado: {{ pfija.estado }}</p>
+    <p>Recepcion {{ pfija.recepcion }}</p>
+    <p>Entrega {{ pfija.entrega }}</p>
+    <p>Total {{ pfija.total }}</p>
+    
+    <p>N° Coronas {{pfija.coronas}}</p>
+    <p>N° Apoyos {{ pfija.apoyos }}</p>-->
+  <div class="row">
+    <div>    
+      <form class="" ng-submit="envio()">
+        <div class="account-wall">        
+          <h1>REMOVIBLES</h1>
+          <p>Datos Generales / Removibles</p>
+
+          <div class="row">
+            <div class="col-md-2">
+                <label class="custom-size">Editar Orden:</label>                   
+            </div>          
+            <div class="col-md-3">
+              <input type = "text" class="form-control input-lg" ng-model="editar" id="idOrden" > <!--solo numeros aca-->
+            </div> 
+             <div class="col-md-1">              
+              <button class="btn btn-lg btn-primary btn-block" type="button" ng-click = "editarOrden()">  <!--disabled si el campo de al lado no esta lleno-->
+                       Editar
+              </button> 
+            </div>  
+              
+            <div class="col-md-1 col-md-offset-2">
+              <label class="custom-size">Recepcion:</label>               
+            </div>
+            <div class="col-md-3">
+              <input type="date" class="form-control input-lg" ng-model="orden.inicio" required>            
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="col-md-2">
+            <label class="custom-size">Origen:</label>
+          </div>
+          <div class="col-md-4">
+            <select  class="form-control input-lg"
+                      ng-model="orden.origen"
+                      ng-options="item as item.nombre for item in listaOrigenes track by item.id"
+                      ng-change = "obtenerConvenios();" required>
+                      <option value="" disabled selected>Seleccione un Origen</option>
+            </select>                
+          </div>
+          <div class="col-md-1 col-md-offset-2">
+            <label class="custom-size">Entrega:</label>
+          </div>
+          <div class="col-md-3">
+            <input type="date" class="form-control input-lg" ng-model="orden.fin"> 
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-md-2">
+            <label class="custom-size">Convenio:</label>
+          </div>
+          <div class="col-md-4">
+            <select class="form-control input-lg"
+                    ng-model="orden.convenio"
+                    ng-options = "item as item.nombre for item in listaConvenios track by item.id">
+              <option value = "" selected>No Tiene Convenio</option>      
+            </select>
+          </div>
+          <div class="col-md-1 col-md-offset-2">
+            <label class="custom-size">Color:</label>
+          </div>
+          <div class="col-md-3">
+          <input type="text" class="form-control input-lg" ng-model="orden.color" placeholder="Igrese Color" required>
+          </div>         
+        </div> -->
+
+        <div class="row">
+          <div class="col-md-2">
+            <label class="custom-size">Odontologo:</label>
+          </div>
+          <div class="col-md-4">
+            <select class="form-control input-lg"
+                       ng-model="orden.odontologo"
+                       ng-options="item as item.nombre for item in listaOdontologos track by item.id"
+                       required>
+              <option value="" disabled selected>Seleccione un Odontologo</option>
+            </select>
+          </div>
+          <div class="col-md-1 col-md-offset-2">
+            <label class="custom-size">Estado:</label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control input-lg"
+               ng-model="orden.estado"
+               required
+               disabled>
+               <option value="" disabled selected>En Ejecucion</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <label class="custom-size">Paciente:</label>
+          </div>
+          <div class="col-md-4">
+            <input type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="orden.paciente" placeholder="Paciente" required autofocus>
+          </div>
+          <div class="col-md-1 col-md-offset-2">
+            <label class="custom-size">Descuento:</label>
+          </div>
+          <div class="col-md-3">               
+            <div class="input-group">      
+              <input type="text" pattern="[-+]?[0-9]*[.,]?[0-9]+" class="form-control input-lg" ng-model="orden.descuento" placeholder="Descuento" disabled>
+              <div class="input-group-addon"><strong>%</strong></div>
+            </div>
+          </div>
+          <div class="col-md-1">              
+          </div>
+        </div>      
+        <div class="row">
+          <div class="col-md-2">
+            <label class="custom-size">Adherente/Obs</label>
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control input-lg" ng-model="orden.comentario" placeholder="Adherente/Obs" />
+          </div>
+          <div class="col-md-1 col-md-offset-2">
+            <label class="custom-size">Total:</label>
+          </div>
+          <div class="col-md-3">
+            <div class="input-group">                  
+              <div class="input-group-addon"><strong>$</strong></div>
+              <input type="text" class="form-control input-lg" ng-model="orden.total" ng-disabled="true" required>
+              </div>
+          </div>
+        </div>
+          </div>     
+          <div class="account-wall" id="Especifico">
+            <p>Datos Especifícos / Removibles</p>
+
+            <div class="row">
+              <div class="col-md-2">
+                <label class="custom-size">N° Cromos:</label>
+              </div>
+              <div class="col-md-2">
+                <input type="text" pattern="\d+" class="form-control input-lg" ng-model="orden.numCromos" placeholder="N° Cromos" required>
+              </div>
+              <div class="col-md-2 col-md-offset-0">
+                <label class="custom-size">Superior:</label>
+              </div>
+              <div class="col-md-2">
+                <input type="text" pattern="\d+" class="form-control input-lg" ng-model="orden.superior" placeholder="Superior" required>
+              </div>
+              <div class="col-md-2 col-md-offset-0">
+                <label class="custom-size">Inferior:</label>
+              </div>
+              <div class="col-md-2">
+                <input type="text" pattern="\d+" class="form-control input-lg" ng-model="orden.inferior" placeholder="Inferior" required>
+              </div>              
+            </div>
+            
+          </div>
+          <div class="account-wall">
+            <p>Guardar Orden</p>
+              <div class="row">
+                  <div class="col-md-12">
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">
+                        Guardar
+                      </button>                      
+                  </div>
+              </div>
+          </div>
+          </form> 
+       
+    </div>
+  </div>
+</div>
+<div>
+
+</div>

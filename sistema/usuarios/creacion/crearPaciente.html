@@ -1,0 +1,97 @@
+<style>
+.custom-size {
+    font-size: 18px;
+}
+.row {
+    margin-bottom: 5px;
+}
+.account-wall {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;    
+}
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-weight: bold;
+}
+p {
+    text-align: center;
+    text-transform: capitalize;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+	button {
+	margin-top: 1px solid black;
+	}
+</style>
+<div class="container">
+	<form ng-submit="envio()">
+      <div class="account-wall">
+          <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+          <h1 class="text-center login-title">Nuevo Paciente</h1>       
+		  <div class="row">
+			<div class="col-md-3">  
+          		<label class="custom-size">Nombre Completo:</label>
+			</div>
+			<div class="col-md-9">  
+          		<input type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="paciente.nombre" placeholder="Nombre Completo" required> 
+			</div>	
+		  </div>
+		  <div class="row">
+			  <div class="col-md-3"> 
+			  	<label class="custom-size">Direccion:</label>
+			  </div>
+			  <div class="col-md-9"> 
+			  	<input type="text" class="form-control input-lg" ng-model="paciente.direccion" placeholder="Direccion" required>
+			  </div>
+		  </div>
+		  <div class="row">
+			  <div class="col-md-3"> 
+			  	<label class="custom-size">Telefono Fijo:</label>
+			  </div>
+			  <div class="col-md-4"> 
+			  	<input type="text" pattern="[0-9]{9}" class="form-control input-lg" ng-model="paciente.fono" placeholder="Telefono Fijo" required>
+			  </div>
+			  <div class="col-md-1 col-md-offset-0">
+			  	<label class="custom-size">Celular:</label>
+		  	  </div>
+			  <div class="col-md-4">
+          		<input type="text" pattern="[0-9]{8}" class="form-control input-lg" ng-model="paciente.celular" placeholder="Celular" required>
+			  </div>
+		  </div>
+          <div class="row">
+			  <div class="col-md-3">
+			  	<label class="custom-size">Rut:</label>
+			  </div>
+			  <div class="col-md-9">  
+			  	<input type="text" pattern="[0-9]{8,9}" class="form-control input-lg" ng-model="paciente.rut" placeholder="Rut sin puntos ni guion" required>
+			  </div>	  
+		  </div>
+		  <div class="row">
+			  <div class="col-md-3">
+			  	<label class="custom-size">Contraseña:</label>
+			  </div>
+			  <div class="col-md-9">
+			  	<input type="password" class="form-control input-lg" ng-model="paciente.password" placeholder="Contraseña" required>
+			  </div>
+		  </div>
+		  <div class="row">
+			<div class="col-md-3">  
+          		<label class="custom-size">Correo:</label>
+			</div>
+			<div class="col-md-9">  
+          		<input type="email" class="form-control input-lg" ng-model="paciente.correo" placeholder="Correo" required>
+			</div>
+		  </div>	  
+          <div class="row">
+			   <div class="col-md-3 col-md-offset-5">
+				  <button class="btn btn-lg btn-primary" ng-disabled="form.$invalid || dataLoading" type="submit">
+					  Guardar
+				  </button>
+			  </div>
+		  </div>	  
+  </div>
+		</form>
+</div>

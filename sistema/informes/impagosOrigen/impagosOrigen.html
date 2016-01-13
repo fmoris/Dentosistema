@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="sistema/informes/informes.css"></link>
+
+
+<div class="container">    
+    <div class="account-wall ocultar" id="Acciones">           
+      <h1 class="text-center">Trabajos Impagos por Origen</h1>        
+      <form ng-submit="envioOrigen()" name="impagoOrigen">                 
+          <div class="row">
+            <div class="col-md-12">	        
+				      <select class="form-control input-lg" id="listaOrigen"
+						          ng-model="origen"						
+					            ng-options="item as item.nombre for item in listaOrigenes" required>
+                      <option value="" disabled selected>Seleccione un Origen</option>                    
+              </select>
+	         </div>
+         </div>
+         <div class="row">
+	         <div class="col-md-12">
+				      <!-- <button class="btn btn-primary btn-lg btn-block"  data-toggle="modal" ng-disabled="!impagoOrigen.$valid" data-target="#myModal1">Generar Informe</button> -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="imprimirImpagosOrigen()" ng-disabled="!impagoOrigen.$valid">Generar Informe</button>
+			     </div>
+		      </div>       
+    </form>
+    </div>
+  
+    <div class="account-wall" ng-show="informeDetalle.id != null">       
+        <h4>Ordenes impagas para {{informeDetalle.nombreOrigen}}</h4>
+        <div class="row ocultar">
+          <table class="table-responsive table-bordered table-hover table-condensed tablafiltro">
+            <tr>
+              <th>Filtro</th>
+              <th>Mostrar/ocultar</th>
+            </tr>
+            <tr>
+              <td>Mostrar Folio</td>
+              <td>
+                <input type="checkbox" class="form-control ocultar" ng-model=showFolio ng-true-value="false" ng-false-value="true">
+              </td>
+            </tr>
+          </table>                          
+        </div>                 
+        <h4>Total: {{trabajos.total | currency:"$":0}}</h4>
+        <div ng-repeat = "item in trabajos.odontologos">
+          <p>Odontologo: {{item.nombre}} Total: {{item.total | currency:"$":0}}</p>             
+          <div class="table-responsive" ng-hide= vacio(item.protesisFija)>
+            <strong>Protesis Fija</strong>              
+            <table class="table table-bordered table-hover table-responsive" >
+              <tr>
+                <th>Orden</th>
+                <th ng-hide = showFolio>Folio</th>
+                <th>Paciente</th>
+                <th>Recepcion</th>
+                <th>Entrega</th>
+                <th>Total Orden</th>
+              </tr>
+              <tr ng-repeat="item2 in item.protesisFija">
+                <td>{{item2.orden}}</td>
+                <td ng-hide = showFolio>{{item2.folio}}</td>
+                <td>{{item2.paciente}}</td>
+                <td>{{item2.recepcion}}</td>
+                <td>{{item2.entrega}}</td>
+                <td>{{item2.totalorden | currency:"$":0}}</td>
+                <td>{{pFija.atrasado}}</td> 
+                </tr>
+            </table>
+          </div>                            
+          <div class="table-responsive" ng-hide= vacio(item.colados)>            
+            <strong>Colados</strong>
+            <table class="table table-bordered table-hover">                
+              <tr>
+                <th>Orden:</th>
+                <th ng-hide = showFolio>Folio:</th>
+                <th>Paciente</th>
+                <th>Recepcion</th>
+                <th>Entrega</th>
+                <th>Total Orden</th>
+              </tr>
+              <tr ng-repeat="item2 in item.colados">
+                <td>{{item2.orden}}</td>
+                <td ng-hide = showFolio>{{item2.folio}}</td>
+                <td>{{item2.paciente}}</td>
+                <td>{{item2.recepcion}}</td>
+                <td>{{item2.entrega}}</td>
+                <td>{{item2.totalorden | currency:"$":0}}</td>
+              </tr>
+            </table>
+          </div>                            
+          <div class="table-responsive" ng-hide= vacio(item.removibles)>
+            <strong>Removibles</strong>           
+            <table class="table table-bordered table-hover" >
+              <tr>
+                <th>Orden:</th>
+                <th ng-hide = showFolio>Folio</th>
+                <th>Paciente</th>
+                <th>Recepcion</th>
+                <th>Entrega</th>
+                <th>Total Orden</th>
+              </tr>
+              <tr ng-repeat="item2 in item.removibles">
+                <td>{{item2.orden}}</td>
+                <td ng-hide = showFolio>{{item2.folio}}</td>
+                <td>{{item2.paciente}}</td>
+                <td>{{item2.recepcion}}</td>
+                <td>{{item2.entrega}}</td>
+                <td>{{item2.totalorden | currency:"$":0}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+    </div>
+
+    <div class="container ocultar" ng-show="informeDetalle.id != null" id="Imprimir">
+  <div class="row">
+    <div class="account-wall">
+      <h4>Acciones</h4>          
+      <button class="btn btn-lg btn-primary btn-block" ng-click="imprimir()">Imprimir</button>
+      <button class="btn btn-lg btn-primary btn-block" onClick="javascript:history.go(-1);">Volver</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="row ocultar" data-ng-include src=" 'segmentos/navegadorGoogle/informes.html' ">    
+</div>
+ 

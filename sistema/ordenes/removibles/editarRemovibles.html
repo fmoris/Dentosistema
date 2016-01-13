@@ -1,0 +1,541 @@
+<div class="container">   
+  <form ng-submit="editarOrden(orden)" name="editaOrden" >
+      <fieldset ng-disabled = "mostrar != 0">
+    <div class="account-wall" id="Orden">        
+      <div class="row">
+          <h1>REMOVIBLES</h1>
+          <p>Datos Generales / Removibles</p> 
+          <div class="col-md-2">
+              <label class="custom-size">Orden:</label>                     
+          </div>          
+          <div class="col-md-4">
+            <input type = "text" class="form-control input-lg" ng-model="idOrden" disabled>
+          </div>          
+          <div class="col-md-1 col-md-offset-2">
+            <label class="custom-size">Recepcion:</label>               
+          </div>
+          <div class="col-md-3">
+            <input type="date" class="form-control input-lg" ng-model="orden.inicio" required>          
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Origen:</label>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control input-lg"
+                  ng-model="orden.origen"
+                  ng-options="item as item.nombre for item in listaOrigenes track by item.id"
+                  required>
+                  <option value="" disabled selected>Seleccione un Origen</option>
+          </select>                
+        </div>
+        <div class="col-md-1 col-md-offset-2">
+          <label class="custom-size">Entrega:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="date" class="form-control input-lg" ng-model="orden.fin"> 
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Convenio:</label>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control input-lg"
+                  ng-model="orden.convenio"
+                  ng-options = "item as item.nombre for item in listaConvenios track by item.id">
+            <option value = "" selected>No Tiene Convenio</option>      
+          </select>
+        </div>        
+      </div> -->
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Odontologo:</label>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control input-lg"
+           ng-model="orden.odontologo"
+           ng-options="item as item.nombre for item in listaOdontologos track by item.id"
+           required>
+            <option value="" selected disabled>Seleccione un Odontologo</option>
+          </select>
+        </div>
+        <div class="col-md-1 col-md-offset-2">
+          <label class="custom-size">Estado:</label>
+        </div>
+        <div class="col-md-3">
+          <select class="form-control input-lg"
+           ng-model="orden.estado"
+           ng-options="item.nombre as item.nombre for item in listaEstadosOrden"
+           required>
+           <option value="" selected disabled>Seleccione un Estado</option>               
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Paciente:</label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="orden.paciente" placeholder="Paciente" required autofocus>
+        </div>
+        <div class="col-md-1 col-md-offset-2">
+          <label class="custom-size">Descuento:</label>
+        </div>
+        <div class="col-md-3">               
+          <div class="input-group">      
+            <input type="text" pattern="[-+]?[0-9]*[.,]?[0-9]+" class="form-control input-lg" ng-model="orden.descuento" placeholder="Descuento" disabled required>
+            <div class="input-group-addon"><strong>%</strong></div>
+          </div>
+        </div>
+        <div class="col-md-1">              
+        </div>
+      </div>      
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Adherente/Obs</label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control input-lg" ng-model="orden.comentario" placeholder="Adherente/Obs" />
+        </div>
+        <div class="col-md-1 col-md-offset-2">
+          <label class="custom-size">Total:</label> {{orden.totalOld}}
+        </div>
+        <div class="col-md-3">
+          <div class="input-group">                  
+            <div class="input-group-addon"><strong>$</strong></div>
+            <input type="text" class="form-control input-lg" ng-model="orden.total" ng-disabled="true" required>
+            </div>
+        </div>
+      </div>      
+    </div> 
+    <div class="account-wall" id="Especifico">
+      <p>Datos Especifícos / Removibles</p>
+
+      <div class="row">
+              <div class="col-md-2">
+                <label class="custom-size">N° Cromos:</label>
+              </div>
+              <div class="col-md-2">
+                <input type="text" pattern="\d+" class="form-control input-lg" ng-model="orden.numCromos" placeholder="N° Cromos" required>
+              </div>
+              <div class="col-md-2 col-md-offset-0">
+                <label class="custom-size">Superior:</label>
+              </div>
+              <div class="col-md-2">
+                <input type="text" pattern="\d+" class="form-control input-lg" ng-model="orden.superior" placeholder="Superior" required>
+              </div>
+              <div class="col-md-2 col-md-offset-0">
+                <label class="custom-size">Inferior:</label>
+              </div>
+              <div class="col-md-2">
+                <input type="text" pattern="\d+" class="form-control input-lg" ng-model="orden.inferior" placeholder="Inferior" required>
+              </div>              
+            </div>     
+
+    </div> <!-- wall -->
+
+    <div class="account-wall">
+      <p>Guardar Orden</p> 
+      <div class="row">
+       <div class="col-md-3">
+           <label class="custom-size">Anular Orden:</label>           
+        </div>
+        <div class="col-md-1">  
+          <input type = "checkbox" class="form-control input-lg" ng-model = "orden.anular" ng-true-value = "true" ng-false-value = "false">
+        </div>
+        <div class="col-md-8">  
+          <input type = "text" class="form-control input-lg" ng-model = "orden.anulacion">
+        </div> 
+      </div>  
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-lg btn-primary btn-block" ng-disabled="!editaOrden.$valid" type="submit">
+            Guardar Cambios
+          </button>
+        </div>
+      </div>
+    </div>      
+ 
+    </fieldset> 
+  </form>
+  <div class ="account-wall" id="Trabajos"> 
+    <div id="trabajos"> <p>Trabajos a Realizar</p></div>       
+    <div class="row"> 
+      <div class="col-md-12">       
+        <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#listaTrabajos">Lista de Trabajos</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" ng-click = "mostrarTrabajo(99)">Agregar Nuevo Trabajo</button>
+      </div>
+    </div> 
+  </div> 
+
+  <!-- Agregar Nuevo Trabajo -->    
+  <div class = "account-wall" id= "99" ng-show = "mostrar == 99">  <!-- Trabajo editable -->
+    <p>Trabajo</p>            
+     <form class="" ng-submit = "agregarTrabajo(item)">
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Etapa / Labor:</label>             
+        </div>  
+        <div class="col-md-4">            
+          <select class="form-control input-lg"                  
+              ng-model="item.labor"
+              ng-change="obtenerPrecio(item)"
+              ng-options="labor as labor.nombreLabor group by labor.nombreEtapa for labor in listaLabores track by labor.idLabor"
+              required>
+              <option value="" disabled selected style='display:none;'>Seleccione Etapa / Labor</option>
+            </select> 
+        </div>
+        <div class="col-md-2 col-md-offset-0">
+          <label class="custom-size">Cantidad</label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control input-lg" ng-model="item.cantidad" ng-change="obtenerPrecio(item)" placeholder="Cantidad" required />
+        </div>            
+      </div>          
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Inicio Labor</label>
+        </div>
+        <div class="col-md-2">
+          <input type="date" class="form-control " ng-model="item.inicio" required />
+        </div>
+        <div class="col-md-2">
+          <input type="time" class="form-control " ng-model="item.inicio" required />
+        </div>
+        <div class="col-md-2 col-md-offset-0">
+          <label class="custom-size">Fin Labor</label>
+        </div>
+        <div class="col-md-2">
+          <input type="date" class="form-control " ng-model="item.fin"  />
+        </div>
+        <div class="col-md-2">
+        <input type="time" class="form-control" ng-model="item.fin"  />
+        </div> 
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Ejecutor</label>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control input-lg" ng-model="item.ejecutor" ng-options="ejec as ejec.nombre for ejec in listaEjecutores track by ejec.id " required>
+             <option value="" disabled selected style='display:none;'>Seleccione un Ejecutor</option>
+          </select>
+        </div>
+        <div class="col-md-2 col-md-offset-0">
+          <label class="custom-size">Fecha Requerida</label>
+        </div>
+        <div class="col-md-2">
+        <input type ="date" class="form-control " ng-model="item.requerida" required/> 
+        </div>
+        <div class="col-md-2">
+          <input type ="time" class="form-control" ng-model="item.requerida" required/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label class="custom-size">Estado</label>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control input-lg" ng-model="item.estado" ng-options = "item.nombre as item.nombre for item in listaEstadosTrabajo" required>              
+          </select>
+        </div>
+        <div class="col-md-2 col-md-offset-0">
+          <label class="custom-size">Valor Labor</label> {{item.precio}}
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <div class="input-group-addon"><strong>$</strong></div>
+              <input type="text" class="form-control input-lg" ng-disabled="true" ng-model="item.precio" required />
+            </div>
+        </div>
+      </div>
+      <div class="row"> <!--Comentario -->
+             <div class="col-md-2">
+              <label class="custom-size">Comentario</label>
+             </div>
+             <div class="col-md-10">
+              <textarea class="form-control input-lg" name="comentario" ng-model="item.comentario" placeholder="Comentario"></textarea>
+             </div>
+          </div>         
+      <div class="row">
+          <div class="col-md-12">
+              <p>Acciones</p>
+              <button class="btn btn-lg btn-primary btn-block" type = "submit">
+              Agregar Trabajo
+              </button>                      
+          </div>
+      </div>          
+    </form>
+  </div>
+
+  <!-- Seccion Bloqueada --> 
+  <div id="0" ng-show = "0 == mostrar"> <!-- Trabajo disabled -->
+    <div class="account-wall">
+      <p>Trabajo</p>            
+        <form class="">
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Etapa / Labor:</label>             
+            </div>  
+            <div class="col-md-4">            
+              <select class="form-control input-lg" disabled                 
+                  ng-model="item.labor"
+                  ng-change="obtenerPrecio(item)"
+                  ng-options="labor as labor.nombreLabor group by labor.nombreEtapa for labor in listaLabores track by labor.idLabor"
+                  required>
+                  <option value="" disabled selected style='display:none;'>Seleccione Etapa / Labor</option>
+                </select> 
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Cantidad</label>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control input-lg" ng-model="item.cantidad" ng-change="obtenerPrecio(item)" placeholder="Cantidad" disabled required />
+            </div>            
+          </div>          
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Inicio Labor</label>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control " ng-model="item.inicio" disabled required />
+            </div>
+            <div class="col-md-2">
+              <input type="time" class="form-control " ng-model="item.inicio" disabled required />
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Fin Labor</label>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control " ng-model="item.fin" disabled required />
+            </div>
+            <div class="col-md-2">
+            <input type="time" class="form-control" ng-model="item.fin" disabled required />
+            </div> 
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Ejecutor</label>
+            </div>
+            <div class="col-md-4">
+              <select class="form-control input-lg" ng-model="item.ejecutor" ng-options="ejec as ejec.nombre for ejec in listaEjecutores track by ejec.id " disabled required>
+                 <option value="" disabled selected style='display:none;'>Seleccione un Ejecutor</option>
+              </select>
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Fecha Requerida</label>
+            </div>
+            <div class="col-md-2">
+            <input type ="date" class="form-control " ng-model="item.requerida" disabled required/> 
+            </div>
+            <div class="col-md-2">
+              <input type ="time" class="form-control" ng-model="item.requerida" disabled required/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Estado</label>
+            </div>
+             <div class="col-md-4">
+              <select class="form-control input-lg" ng-model="item.estado" ng-options = "item.nombre for item in listaEstadosTrabajo" disabled required>              
+              </select>
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Valor Labor</label>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+              <div class="input-group-addon"><strong>$</strong></div>
+              <input type="text" class="form-control input-lg" ng-disabled="true" ng-model="item.precio" disabled required />                 
+              </div>
+            </div>
+          </div>
+          <div class="row"> <!--Comentario -->
+             <div class="col-md-2">
+              <label class="custom-size">Comentario</label>
+             </div>
+             <div class="col-md-10">
+              <textarea class="form-control input-lg" name="comentario" ng-model="item.comentario" placeholder="Comentario" disabled></textarea>
+             </div>
+          </div>          
+          <div class="row">
+              <div class="col-md-12">
+                  <p>Acciones</p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <button class="btn btn-lg btn-primary btn-block" ng-click="editarTrabajo(item)" disabled>
+                    Guardar Cambios
+                  </button>                      
+              </div>              
+          </div>          
+        </form>
+    </div>        
+  </div> 
+
+    <!-- Editar Trabajo -->
+    <div ng-repeat = "item in trabajos track by $index">
+      <div class="account-wall" id="{{item.id}}" ng-show = "item.id == mostrar">            
+        <p>Trabajo</p>            
+        <form class="">
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Etapa / Labor:</label>             
+            </div>  
+            <div class="col-md-4">            
+              <select class="form-control input-lg"                  
+                  ng-model="item.labor"
+                  ng-change="obtenerPrecio(item)"
+                  ng-options="labor as labor.nombreLabor group by labor.nombreEtapa for labor in listaLabores track by labor.idLabor"
+                  required>
+                  <option value="" disabled selected style='display:none;'>Seleccione Etapa / Labor</option>
+                </select> 
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Cantidad</label>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control input-lg" ng-model="item.cantidad" ng-change="obtenerPrecio(item)" placeholder="Cantidad" required />
+            </div>            
+          </div>          
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Inicio Labor</label>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control " ng-model="item.inicio" required />
+            </div>
+            <div class="col-md-2">
+              <input type="time" class="form-control " ng-model="item.inicio" required />
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Fin Labor</label>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control " ng-model="item.fin" required />
+            </div>
+            <div class="col-md-2">
+            <input type="time" class="form-control" ng-model="item.fin" required />
+            </div> 
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Ejecutor</label>
+            </div>
+            <div class="col-md-4">
+              <select class="form-control input-lg" ng-model="item.ejecutor" ng-options="ejec as ejec.nombre for ejec in listaEjecutores track by ejec.id " required>
+                 <option value="" disabled selected style='display:none;'>Seleccione un Ejecutor</option>
+              </select>
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Fecha Requerida</label>
+            </div>
+            <div class="col-md-2">
+            <input type ="date" class="form-control " ng-model="item.requerida" required/> 
+            </div>
+            <div class="col-md-2">
+              <input type ="time" class="form-control" ng-model="item.requerida" required/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label class="custom-size">Estado</label>
+            </div>
+             <div class="col-md-4">
+              <select class="form-control input-lg" ng-model="item.estado" ng-options = "item.nombre as item.nombre for item in listaEstadosTrabajo" required>              
+              </select>
+            </div>
+            <div class="col-md-2 col-md-offset-0">
+              <label class="custom-size">Valor Labor</label> {{item.precio}}
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+              <div class="input-group-addon"><strong>$</strong></div>
+              <input type="text" class="form-control input-lg" ng-disabled="true" ng-model="item.precio" required />
+                 
+              </div>
+            </div>
+          </div>
+          <div class="row"> <!--Comentario -->
+             <div class="col-md-2">
+              <label class="custom-size">Comentario</label>
+             </div>
+             <div class="col-md-10">
+              <textarea class="form-control input-lg" name="comentario" ng-model="item.comentario" placeholder="Comentario"></textarea>
+             </div>
+          </div>          
+          <div class="row">
+              <div class="col-md-12">
+                  <p>Acciones</p>
+              </div>
+          </div>          
+          <div class="row">
+              <div class="col-md-6">
+                  <button class="btn btn-lg btn-primary btn-block" ng-click="editarTrabajo(item)">
+                    Guardar Cambios
+                  </button>                      
+              </div>
+              <div class="col-md-6">
+                  <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" ng-click = "confirmarEliminacion(item.id)" data-target="#eliminar">
+                    Eliminar Trabajo
+                  </button>                     
+              </div>
+          </div>          
+        </form>          
+      </div> <!-- repeat -->
+    </div>
+
+</div> <!-- CONTAINER -->    
+         
+       
+<!-- Modal -->
+<div id="listaTrabajos" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Lista de Trabajos (Total: {{trabajos.length}} )</h4>
+      </div>
+      <div class="modal-body">        
+        <div class="row" ng-repeat = "item in trabajos " track by $index>          
+          <button class="btn btn-lg btn-primary btn-block" data-dismiss="modal" type="button" ng-click = "mostrarTrabajo(item.id)">Editar: {{item.labor.nombre}}</button>          
+        </div>          
+      </div> 
+      <div ng-repeat="(key, Orden_idOrden) in trabajos">        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" data-backdrop="static" role="dialog" id="eliminar">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+           <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <h4 class="modal-title">Eliminar {{trabajos[eliminar].nombreLabor}}</h4>
+          </div>
+          <div class="modal-body">
+            <section>
+              Desea eliminar Trabajo  
+            </section>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Cerrar</button>            
+            <button class="btn btn-primary" type = "button" ng-click="eliminarTrabajo(trabajos[eliminar])">
+                  Eliminar Trabajo
+            </button> 
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- barra navegacion -->
+<div class="row ocultar" data-ng-include src=" 'segmentos/navegadorGoogle/ordenes.html' ">    
+</div>

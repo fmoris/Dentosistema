@@ -1,0 +1,37 @@
+<div class="container">
+  <form ng-submit="envio()" name="formEstado">
+    <div class="account-wall" data-ng-init="obtenerEstadoOrden()">         
+      <h1 class="text-center">EDITAR ESTADO TRABAJO</h1>
+      <div class="row">
+        <div class="col-md-3"> 
+          <label class="custom-size">Seleccione Estado:</label>
+        </div>
+        <div class="col-md-9">  
+            <select class="form-control input-lg"
+                  ng-model="listaestado"            
+                  ng-options="item.id*1 as item.nombre for item in listaEstadoTrabajo"                                   
+                  required>
+            <option value="" disabled selected>Seleccione un Estado</option>                    
+          </select> 
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-md-3"> 
+          <label class="custom-size">Nombre Estado:</label>
+        </div>
+        <div class="col-md-9">  
+                <input name="name" type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="estado.nombre" placeholder="Nombre Estado" required> 
+        </div>  
+      </div>      
+      <div class="row">
+        <div class="col-md-3">                
+        </div>
+        <div class="col-md-9">
+          <button class="btn btn-lg btn-primary btn-block" ng-disabled="!formEstado.$valid" type="submit">
+          Guardar
+          </button>
+        </div>
+      </div>    
+    </div>
+  </form>
+</div>

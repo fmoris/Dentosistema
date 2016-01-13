@@ -1,0 +1,71 @@
+<div class="container">
+	<form ng-submit="envio()" class="form-horizontal" name="formconvenio">
+      <div class="account-wall">         
+          <h1 class="text-center login-title">EDITAR CONVENIO</h1>
+
+          <div class="row">
+			  <div class="col-md-3"> 
+			  	<label class="custom-size">Convenio:</label>
+			  </div>
+			  <div class="col-md-9"> 
+			  	<select class="form-control input-lg" required
+			  	 	    ng-model="id"
+                        ng-options = "item.id*1 as item.nombre for item in listaConvenios track by item.id"
+                        ng-change = seleccionaConvenio()>
+			  		<option value="" disabled selected>Seleccione un Convenio</option>
+			  		Nombre Convenio
+			  	</select>
+			  </div>
+		  </div>
+
+		  <div class="row">
+			<div class="col-md-3"> 
+          		<label class="custom-size">Nombre:</label>
+			</div>
+			<div class="col-md-9">  
+          		<input name="name" type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="convenio.nombre" placeholder="Nombre Convenio" required> 
+			</div>	
+		  </div>
+          
+           <div class="row">
+			<div class="col-md-3"> 
+          		<label class="custom-size">Origen:</label>
+			</div>
+			<div class="col-md-3"> 
+          		<input name="name" type="text" class="form-control input-lg" ng-model="convenio.origen" placeholder="Nombre" disabled> 
+			</div>	
+		  </div>
+          
+          <div class="row">
+			<div class="col-md-3"> 
+          		<label class="custom-size">Precio:</label>
+			</div>
+			<div class="col-md-9">  
+          		<input name="name" type="text" pattern="[0-9]{1,99}" class="form-control input-lg" ng-model="convenio.precio" placeholder="Nombre" required> 
+			</div>	
+		  </div>
+          
+          <div class="row">
+			<div class="col-md-3"> 
+          		<label class="custom-size">Obsoleto:</label>
+			</div>
+            <div class="col-md-9"><input type="checkbox" class="form-control" ng-model= "convenio.obsoleto" ng-true-value= "'1'"
+       ng-false-value= "'0'">
+            </div>
+		  </div>
+          
+                  
+       
+          
+          <div class="row">
+          <div class="col-md-3">            		
+			</div>
+			   <div class="col-md-9">
+				  <button class="btn btn-lg btn-primary btn-block" ng-disabled="!formconvenio.$valid" type="submit">
+					  Guardar
+				  </button>
+			  </div>
+		  </div>	  
+  </div>
+		</form>
+</div>

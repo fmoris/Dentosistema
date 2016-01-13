@@ -1,0 +1,75 @@
+[27-Jul-2015 03:26:29 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:29:08 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:29:45 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:44:49 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:45:22 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:45:47 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:46:22 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:48:29 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:56:37 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 03:56:40 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 18
+[27-Jul-2015 03:57:19 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 18
+[27-Jul-2015 03:57:38 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 14:41:54 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 14:41:57 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 18
+[27-Jul-2015 15:26:48 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:26:50 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 18
+[27-Jul-2015 15:39:39 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:40:33 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:41:44 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:42:11 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:42:52 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:44:22 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:46:08 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:46:35 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 18
+[27-Jul-2015 15:48:46 UTC] PHP Parse error:  syntax error, unexpected 'terminado' (T_STRING) in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 25
+[27-Jul-2015 17:42:13 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 32
+[27-Jul-2015 17:42:34 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 32
+[28-Jul-2015 21:47:30 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[28-Jul-2015 21:47:33 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[29-Jul-2015 14:56:44 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[29-Jul-2015 14:56:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[03-Aug-2015 22:01:39 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[03-Aug-2015 22:01:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[03-Aug-2015 22:01:42 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[06-Aug-2015 16:50:10 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[06-Aug-2015 19:27:29 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[06-Aug-2015 19:27:34 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 19:29:55 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 19:30:16 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 19:30:31 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 19:30:38 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 19:31:05 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 19:31:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 19:31:47 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 20:33:03 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 20:53:39 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 33
+[06-Aug-2015 20:54:52 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[06-Aug-2015 20:54:55 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOdontologo.php on line 32
+[06-Aug-2015 23:23:58 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaOdontologos.php on line 23
+[06-Aug-2015 23:23:58 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/pagos/listaOrigen.php on line 23
+[09-Aug-2015 22:53:12 UTC] PHP Parse error:  syntax error, unexpected ';', expecting '(' in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 38
+[09-Aug-2015 22:53:21 UTC] PHP Parse error:  syntax error, unexpected ';', expecting '(' in /home/dentosis/public_html/trabajos/sistema/pagos/listaImpagosOrigen.php on line 38
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  include(../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/pagos/listaOdontologos.php on line 10
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  include(../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/pagos/listaOdontologos.php on line 10
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  include(): Failed opening '../../../php/coneccion.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dentosis/public_html/trabajos/sistema/pagos/listaOdontologos.php on line 10
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/pagos/listaOdontologos.php on line 12
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/dentosis/public_html/trabajos/sistema/pagos/listaOdontologos.php on line 19
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  include(../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/pagos/listaOrigen.php on line 10
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  include(../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/pagos/listaOrigen.php on line 10
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  include(): Failed opening '../../../php/coneccion.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dentosis/public_html/trabajos/sistema/pagos/listaOrigen.php on line 10
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/pagos/listaOrigen.php on line 12
+[26-Aug-2015 18:51:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/dentosis/public_html/trabajos/sistema/pagos/listaOrigen.php on line 19
+[31-Aug-2015 20:09:49 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 25
+[31-Aug-2015 20:10:27 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 25
+[31-Aug-2015 20:13:49 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 25
+[31-Aug-2015 20:15:58 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 28
+[31-Aug-2015 20:15:58 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 28
+[31-Aug-2015 20:16:50 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 28
+[31-Aug-2015 20:16:50 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 28
+[31-Aug-2015 20:18:33 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 29
+[31-Aug-2015 20:18:33 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 29
+[31-Aug-2015 20:33:04 America/Chicago] PHP Parse error:  syntax error, unexpected '$descuento' (T_VARIABLE) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 40
+[31-Aug-2015 20:33:04 America/Chicago] PHP Parse error:  syntax error, unexpected '$descuento' (T_VARIABLE) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 40
+[31-Aug-2015 20:34:15 America/Chicago] PHP Parse error:  syntax error, unexpected '$descuento' (T_VARIABLE) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 40
+[31-Aug-2015 20:34:15 America/Chicago] PHP Parse error:  syntax error, unexpected '$descuento' (T_VARIABLE) in /home/dentosis/public_html/trabajos/sistema/pagos/pagarTrabajo.php on line 40

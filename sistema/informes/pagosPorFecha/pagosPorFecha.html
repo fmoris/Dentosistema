@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="sistema/informes/informes.css"></link>
+<style>
+  .titulo{
+    border-top: 1px solid black;
+    padding-top: 6px;
+  }
+  .origen {
+    border-top: 1px solid black;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 6px;
+  }
+  .total {
+    text-align: center;
+  }
+  .subtotal {
+    text-align: left;
+    font-size: 1em;
+    width: 50%;
+    float:right;
+    text-align: right;
+  }
+  .odontologo{
+    text-transform: capitalize;
+    font-size: 1em;
+    width: 50%;
+    float: left;    
+  }
+  .trabajo{
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .atrasado{
+    background-color:red;
+    color:white;
+    font-weight:bold;
+  }  
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="account-wall ocultar" id="Acciones"> 
+        <form ng-submit="envioPagosFecha()" class="form-inline" name="pagosFecha">
+          <h1 class="text-center">Pagos por Fecha</h1>  
+          <div class="row">        
+            <div class="form-group col-md-4">
+              <label>Fecha Inicio</label> 
+              <input id="impago_ejecutor_inicio" type="date" class="form-control input-lg" data-date-format="DD MMMM YYYY"ng-model="pagos.inicio" required>
+            </div>        
+            <div class="form-group col-md-4"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label>Fecha Fin</label>
+              <input id="impago_ejecutor_fin" type="date" class="form-control input-lg" ng-model="pagos.fin" required>
+            </div>
+          </div>                  
+          <div class="row">
+             <div class="col-md-12">
+                <!-- <button class="btn btn-primary btn-lg btn-block"  data-toggle="modal" ng-disabled="!pagosFecha.$valid" data-target="#modalPagos">Generar Informe</button> -->
+                <button type="button" ng-click="imprimirPagosPorFecha()" class="btn btn-primary btn-lg btn-block" ng-disabled="!pagosFecha.$valid">Ver Documento</button>                
+             </div>
+          </div> 
+        </form>
+    </div>
+    <div class="account-wall" ng-show="informeDetalle.inicio != null">
+    <h4>Pagos entre {{informeDetalle.inicio | dateToISO | date:'dd/MM/yyyy'}} y {{informeDetalle.fin | dateToISO | date:'dd/MM/yyyy'}}</h4>      
+      <div>
+          <h4 class="total">TOTAL: {{pagosPorDia.total | currency:"$":0}}</h4>
+            <div ng-repeat = "origen in pagosPorDia.origenes track by $index">            
+              <h2 class="origen">{{origen.nombre}}</h2>
+              <h4 class="total">Total: {{origen.total | currency:"$":0}}</h4>
+              <div ng-repeat = "odontologo in origen.odontologos track by $index">
+                <h2 class="odontologo"><strong>Odontologo:</strong> {{odontologo.nombre | lowercase}}</h2>
+                <h2 class="subtotal"><strong>Sub-Total:</strong> {{odontologo.total | currency:"$":0}}</h2>
+                <div ng-hide = vacio(odontologo.protesisFija)><h3 class="trabajo">Protesis Fija</h3>
+                  <div class="table-responsive">        
+                    <table class="table table-bordered table-hover" >
+                      <tr>
+                          <th>Orden</th>
+                          <th>Paciente</th>
+                          <th>Fecha Entrega</th>
+                          <th>Fecha Pago</th>
+                          <th>Total</th>  
+                          <!-- <th>Atrasado</th> -->  
+                      </tr>                    
+                      <tr ng-repeat = "pFija in odontologo.protesisFija track by $index">
+                          <td ng-class = "{'atrasado':pFija.atrasado}">{{pFija.orden}}</td>
+                          <td ng-class = "{'atrasado':pFija.atrasado}">{{pFija.paciente}}</td>
+                          <td ng-class = "{'atrasado':pFija.atrasado}">{{pFija.entrega | date:'dd/MM/yyyy'}}</td>
+                          <td ng-class = "{'atrasado':pFija.atrasado}">{{pFija.fechaPago | date:'dd/MM/yyyy'}}</td>
+                          <td ng-class = "{'atrasado':pFija.atrasado}">{{pFija.total | currency:"$":0}}</td>   
+                          <!-- <td ng-class = "{'atrasado':pFija.atrasado}">{{pFija.atrasado}}</td>   -->
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                    <div ng-hide = vacio(odontologo.colados)> <h3 class="trabajo">Colados</h3>
+                        <div class="table-responsive">        
+                            <table class="table table-bordered table-hover" >
+                            <tr>
+                                <th>Orden</th>
+                                <th>Paciente</th>
+                                <th>Fecha Entrega</th>
+                                <th>Fecha Pago</th>
+                                <th>Total</th>             
+                            </tr>                    
+                            <tr ng-repeat = "colado in odontologo.colados track by $index">
+                                <td ng-class = "{'atrasado':colado.atrasado}">{{colado.orden}}</td>
+                                <td ng-class = "{'atrasado':colado.atrasado}">{{colado.paciente}}</td>
+                                <td ng-class = "{'atrasado':colado.atrasado}">{{colado.entrega | date:'dd/MM/yyyy'}}</td>
+                                <td ng-class = "{'atrasado':colado.atrasado}">{{colado.fechaPago | date:'dd/MM/yyyy'}}</td>
+                                <td ng-class = "{'atrasado':colado.atrasado}">{{colado.total | currency:"$":0}}</td>
+                            </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div ng-hide = vacio(odontologo.removibles)> <h3 class="trabajo">Removibles</h3>
+                        <div class="table-responsive">        
+                            <table class="table table-bordered table-hover" >
+                            <tr>
+                                <th>Orden</th>
+                                <th>Paciente</th>
+                                <th>Fecha Entrega</th>
+                                <th>Fecha Pago</th>
+                                <th>Total</th>             
+                            </tr>                    
+                            <tr ng-repeat = "removible in odontologo.removibles track by $index">
+                                <td ng-class = "{'atrasado':removible.atrasado}">{{removible.orden}}</td>
+                                <td ng-class = "{'atrasado':removible.atrasado}">{{removible.paciente}}</td>
+                                <td ng-class = "{'atrasado':removible.atrasado}">{{removible.entrega | date:'dd/MM/yyyy'}}</td>
+                                <td ng-class = "{'atrasado':removible.atrasado}">{{removible.fechaPago | date:'dd/MM/yyyy'}}</td>
+                                <td ng-class = "{'atrasado':removible.atrasado}">{{removible.total | currency:"$":0}}</td>
+                            </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+      </div>     
+  </div>
+</div>
+
+  <div class="container ocultar" id="Imprimir" ng-show="informeDetalle.inicio != null">
+        <div class="row">
+          <div class="account-wall">
+            <h4>Acciones</h4>          
+            <button class="btn btn-lg btn-primary btn-block" ng-click="imprimir()">Imprimir</button>
+            <button class="btn btn-lg btn-primary btn-block" onClick="javascript:history.go(-1);">Volver</button>
+          </div>
+        </div>
+  </div>
+
+  <div class="row ocultar"  data-ng-include src=" 'segmentos/navegadorGoogle/informes.html' ">    
+  </div>
+ 
+
+ 

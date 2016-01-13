@@ -1,0 +1,43 @@
+<style type="text/css">
+
+  h3{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+</style>
+<div class="container">          
+  <form ng-submit="crearEtapa()" name="OrigenForm">
+    <div class="account-wall">          
+      <h1 class="text-center login-title">Nueva Etapa</h1>
+        <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Nombre Etapa:</label> 
+          </div>
+        <div class="col-md-9">
+          <input type="text" class="form-control input-lg" ng-model="etapa.nombre" placeholder="Nombre de la Etapa" required autofocus>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label class="custom-size">Clasificacion:</label>
+        </div>
+        <div class="col-md-9">    
+          <select class="form-control input-lg"
+            ng-model="etapa.clasi"
+            >
+              <option value="1">Protesis Fija</option>   
+              <option value="2">Colados</option> 
+              <option value="3">Removibles</option> 
+          </select>
+        </div>
+      </div>
+    </div>
+      <div class="account-wall">
+      <h3>Guardar Etapa</h3>
+        <button class="btn btn-lg btn-primary btn-block" ng-disabled="!OrigenForm.$valid" type="submit">       
+          Nueva Etapa
+        </button>
+      </div>
+  </form>
+</div>  

@@ -1,0 +1,3 @@
+[24-Aug-2015 23:02:30 UTC] PHP Parse error:  syntax error, unexpected 'IS' (T_STRING) in /home/dentosis/public_html/trabajos/sistema/mantencion/ejecutores/editar/listaEjecutores.php on line 17
+[24-Aug-2015 23:03:25 UTC] PHP Parse error:  syntax error, unexpected 'ORDER' (T_STRING) in /home/dentosis/public_html/trabajos/sistema/mantencion/ejecutores/editar/listaEjecutores.php on line 17
+[24-Aug-2015 23:31:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/mantencion/ejecutores/editar/listaEjecutores.php on line 23

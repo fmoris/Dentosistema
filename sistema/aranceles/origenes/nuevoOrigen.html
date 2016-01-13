@@ -1,0 +1,113 @@
+<style type="text/css">
+
+  h3{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+<div class="container">          
+  <form ng-submit="crearOrigen()" name="OrigenForm">
+    <div class="account-wall">          
+      <!-- <h1 class="text-center login-title">Nuevo Origen</h1> -->
+      <h1 class="text-center" id="Top">Nuevo Origen</h1>
+        <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Nombre Institucion:</label> 
+          </div>
+        <div class="col-md-9">
+          <input type="text" pattern="[A-Za-z ]{3,45}" class="form-control input-lg" ng-model="origen.nombre" placeholder="Nombre de la Institucion" required autofocus>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label class="custom-size">Copiar Precios:</label>
+        </div>
+        <div class="col-md-9">    
+          <select class="form-control input-lg"
+            ng-model="origen.origen"
+            ng-change= "listaLabores(origen.origen.idOrigen)"
+            ng-options="item as item.nombre for item in origenes"
+            >
+              <option value="">Valor Cero</option>    
+          </select>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Correo:</label> 
+          </div>
+        <div class="col-md-9">
+          <input type="email" class="form-control input-lg" ng-model="origen.direccion" placeholder="Correo Electronico" required autofocus>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Telefono:</label> 
+          </div>
+        <div class="col-md-9">
+          <input type="phone" pattern="[0-9]{8,9}" class="form-control input-lg" ng-model="origen.telefono" placeholder="Telefono de Contacto" required autofocus>
+        </div>
+      </div> 
+      <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Restaurar Nombres Por Defecto:</label> 
+          </div>
+        <div class="col-md-9">
+         <button class="btn btn-lg btn-primary btn-block" ng-click ="nombresPorDefecto()" ng-disabled="origen.origen == '' " type="button">      
+          Restaurar Nombres Labor 
+        </button>
+        </div>
+      </div>  
+    </div>
+      <div ng-repeat="clasi in origen.datos">
+        <div class="account-wall">
+            <h1 class="text-center" id="{{clasi.clasificacion}}">{{clasi.clasificacion}}</h1>
+            <div ng-repeat="etapa in clasi.etapas">
+              <h2 ng-hide = "etapa.obsoleto =='1'" class="text-center">{{etapa.nombreEtapa}}</h2>           
+               <div ng-repeat="labor in etapa.labores">
+                <div class="row" ng-hide = "labor.obsoleto =='1'" >
+                    <div class="col-md-1">                  
+                      <input class="form-control input-lg" type = "checkbox" ng-true-value = "'1'" ng-false-value = "'0'" ng-model = "labor.activo">
+                    </div>
+                    <div class="col-md-4">                  
+                      <label class="custom-size valores">{{labor.nombre | lowercase}}</label>
+                    </div>
+                    <div class="col-md-4">                  
+                      <input type="text" 
+                      placeholder="Nombre de Labor para Origen"
+                      class="form-control input-lg"
+                      ng-model="origen.datos[$parent.$parent.$index].etapas[$parent.$index].labores[$index].nombreEspecial" 
+                      required/>
+                    </div>
+                    <div class="col-md-3">                    
+                      <input type="text" 
+                      placeholder="Valor"
+                      pattern="[0-9]{0,6}"
+                      class="form-control input-lg"
+                      ng-model="origen.datos[$parent.$parent.$index].etapas[$parent.$index].labores[$index].precio" 
+                      />
+                    </div>
+              </div>
+            </div>
+          </div>           
+        </div>   
+    </div>
+
+      <div class="account-wall" id="Guardado">
+      <h3>Guardar Origen</h3>
+        <button class="btn btn-lg btn-primary btn-block" ng-disabled="!OrigenForm.$valid" type="submit">       
+          Nuevo Origen
+        </button>
+      </div>
+  </form>
+</div> 
+
+<div class="row" data-ng-include src=" 'segmentos/navegadorGoogle/aranceles.html' ">    
+</div>
+

@@ -1,0 +1,23 @@
+.custom-size {
+    font-size: 18px;
+}
+.row {
+    margin-bottom: 5px;
+}
+.account-wall {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;    
+}
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-weight: bold;
+}
+p {
+    text-align: center;
+    text-transform: capitalize;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}

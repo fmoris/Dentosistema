@@ -1,0 +1,4 @@
+[20-Aug-2015 19:04:46 UTC] PHP Parse error:  syntax error, unexpected '$objetoConvenio' (T_VARIABLE) in /home/dentosis/public_html/trabajos/sistema/convenios/seleccionaConvenio.php on line 31
+[20-Aug-2015 19:05:50 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/convenios/seleccionaConvenio.php on line 49
+[25-Aug-2015 21:16:09 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/convenios/seleccionaConvenio.php on line 30
+[25-Aug-2015 21:18:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/dentosis/public_html/trabajos/sistema/convenios/seleccionaConvenio.php on line 30

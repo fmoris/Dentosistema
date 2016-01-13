@@ -1,0 +1,88 @@
+<style type="text/css">
+
+  h3{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .color {
+    background-color: lightgrey;
+    margin: 1px solid black;
+  }
+  .editar{
+    border-bottom: 1px solid black;
+  }
+  .nombreetapa{
+    text-align: center;
+  }
+</style>
+<div class="container">          
+  <form ng-submit="editarEtapa()" name="OrigenForm">            
+    
+    <div class="account-wall">
+      <h1 class="text-center">Editar Etapas</h1>  
+      <div ng-repeat="clasi in etapas">
+        <h2 class="text-center" id="{{clasi.nombre}}">{{clasi.nombre}}</h2>
+        <div class="row">
+          <div class="col-md-6"><h3>Nombre</h3></div>
+          <div class="col-md-2"><h3>Obsoleto</h3></div>
+          <div class="col-md-4"><h3>Editar</h3></div>                
+        </div>
+        <div ng-repeat="etapa in clasi.etapas" class="account-wall color">
+          <div class="row">
+              <div class="col-md-6" ng-hide = "etapa.editar">
+                <h3>{{etapa.nombre}}</h3>
+              </div>
+              <div class="col-md-6" ng-show = "etapa.editar">
+                <input type="text" class="form-control input-lg nombreetapa" ng-model="etapa.nombre"/>
+              </div>
+              <div class="col-md-2">
+                <input type="checkbox" class="form-control" ng-model= "etapa.obsoleto" ng-true-value= "'1'"
+       ng-false-value= "'0'" ng-disabled="!etapa.editar" ng-change = "desactivar(etapa);"/>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary btn-block" ng-click="editar(etapa);" type="button">
+                  Editar
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary btn-block" ng-click="detalles(etapa);" type="button">
+                  Ver Detalles
+                </button>
+              </div>
+          </div>
+          <div ng-repeat="labor in etapa.labores" ng-show = "etapa.detalles">
+            <div class="row editar">
+              <div class="col-md-6" ng-hide = "labor.editar">
+                <h4>{{labor.nombre}}</h4>
+              </div>
+              <div class="col-md-6" ng-show = "labor.editar">
+                <input type="text" class="form-control input-lg" ng-model="labor.nombre">
+              </div>
+              <div class="col-md-2"><input type="checkbox" class="form-control" ng-model= "labor.obsoleto" ng-true-value= "'1'"
+       ng-false-value= "'0'" ng-disabled="!labor.editar">
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-primary btn-block" ng-click="editar(labor);" type="button">
+                  Editar</button>
+                </div>
+            </div>
+          </div>                    
+        </div>
+      </div>      
+    </div>
+    <div class="account-wall" id="Guardado">
+      <h3>Guardar Cambios</h3>
+      <button class="btn btn-lg btn-primary btn-block" ng-disabled="!OrigenForm.$valid" type="submit">       
+        Editar Etapa
+      </button>
+    </div>
+  </form>
+  <div class="row" data-ng-include src=" 'segmentos/navegadorGoogle/aranceles.html' ">    
+  </div>
+</div>        

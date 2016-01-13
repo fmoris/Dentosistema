@@ -1,0 +1,64 @@
+<style type="text/css">
+
+  h3{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .color {
+    background-color: lightgrey;
+    margin: 1px solid black;
+  }
+  .editar{
+    border-bottom: 1px solid black;
+  }
+  .nombreetapa{
+    text-align: center;
+  }
+</style>
+<div class="container">          
+  <form ng-submit="editarLabor()" name="metalForm">
+    <div class="account-wall">          
+      <h1 class="text-center">Editar Metales</h1>
+        <div class = "row">
+          <div class="col-md-5"><h3>Nombre</h3></div>
+          <div class="col-md-2"><h3>Precio</h3></div>
+          <div class="col-md-2"><h3>Obsoleto</h3></div>
+          <div class="col-md-3"><h3>Editar</h3></div> 
+        </div>
+
+        <div class="account-wall color" ng-repeat =  "metal in listaMetales">
+          <div class="row">
+            <div class="col-md-5" ng-show = "metal.editar">
+              <input type = "text" class="form-control input-lg"  ng-model = "metal.nombre">
+            </div>
+            <div class="col-md-5" ng-hide = "metal.editar">
+              <h3>{{metal.nombre}}</h3>
+            </div>
+            <div class="col-md-2">
+              <input type = "text" class="form-control input-lg" ng-model = "metal.precio" ng-disabled = "!metal.editar">
+            </div>
+            <div class="col-md-2">
+              <input type = "checkbox" ng-model = "metal.obsoleto" class="form-control input-lg" ng-true-value = "'1'" ng-false-value = "'0'" ng-disabled = "!metal.editar">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-lg btn-primary btn-block" ng-click="editar(metal)" type="button">
+                    Editar Metal
+                </button>
+            </div> 
+          </div>        
+        </div>
+    </div>
+    <div class="account-wall" id="Guardado">
+      <h3>Guardar Cambios</h3>
+      <button class="btn btn-lg btn-primary btn-block" ng-click="editarMetales()" ng-disabled="!metalForm.$valid" type="button">
+        Guardar Cambios
+      </button>
+    </div>  
+  </form>
+</div>

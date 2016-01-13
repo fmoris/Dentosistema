@@ -1,0 +1,104 @@
+<div class="account-wall">  
+<div class="page-header">
+<h1>Lista de Ordenes</h1>
+</div>
+<div>
+    <section>
+        <strong>Pagina:</strong> {{tableParams.page()}}
+    </section>
+    <section>
+        <strong>Datos por Paginas:</strong> {{tableParams.count()}}
+    </section>    
+    <table ng-table="tableParams"  show-filter="true" template-pagination="custom/pager" class="table">
+        <tr ng-repeat="user in $data">
+			<td data-title="'Orden'" sortable="'orden'" filter="{ 'orden': 'text' }">
+                {{user.orden}}
+            </td>
+            <td data-title="'Clasificacion'" filter="{ 'clasificacion': 'select' }" filter-data="clasificaciones($column)">
+                {{user.clasificacion}}
+            </td> 
+            <td data-title="'Odontologo'" filter="{ 'odontologo': 'text' }">
+                {{user.odontologo}}
+            </td>            
+			<td data-title="'Paciente'" filter="{ 'paciente': 'text' }">
+                {{user.paciente}}
+            </td>
+			<td data-title="'Recepcion'" sortable="'recepcion'">
+                {{user.recepcion}}
+            </td>
+            <td data-title="'Entrega'" sortable="'entrega'">
+                {{user.entrega}}
+            </td>
+			<td data-title="'Estado'" filter="{ 'estado': 'select' }" filter-data="estados($column)">
+                {{user.estado}}
+            </td>
+            <td data-title="'Valor Total'">
+                ${{user.totalorden}}
+            </td>
+             <td data-title="'Pagado'" filter="{ 'pagado': 'select' }" filter-data="pagados($column)">
+                {{user.pagado}}
+            </td>
+			<td data-title="'Acciones'">
+                <div class="form-grup">              
+                 <button type="button" ng-click="edita(user.orden,user.idclasificacion)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Ver
+                 </button>          
+                </div>
+            </td>
+        </tr>
+    </table>
+     <script type="text/ng-template" id="custom/pager">
+        <ul class="pager ng-cloak">
+            <li ng-repeat="page in pages"
+                ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}"
+                ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
+                <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Atras</a>
+                <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Siguiente &raquo;</a>
+            </li>
+            <li>
+                <div class="btn-group">
+                    <button type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)" class="btn btn-default">10</button>
+                    <button type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)" class="btn btn-default">25</button>
+                    <button type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)" class="btn btn-default">50</button>
+                    <button type="button" ng-class="{'active':params.count() == 100}" ng-click="params.count(100)" class="btn btn-default">100</button>
+                </div>
+            </li>
+        </ul>
+    </script>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Detalles Orden</h4>
+      </div>
+      <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+            <tr>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Inicio</th>
+                <th>Fin</th>
+                <th>Valor</th>                
+            </tr>
+            <tr ng-repeat="trabajo in trabajos">
+                <td>{{trabajo.descripcion}}</td>
+                <td>{{trabajo.estado}}</td>
+                <td>{{trabajo.iniciolabor}}</td>
+                <td>{{trabajo.finlabor}}</td>
+                <td>{{trabajo.valortrabajo}}</td>
+            </tr>
+            </table>
+          </div>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>        
+      </div>
+    </div>
+  </div>
+</div>

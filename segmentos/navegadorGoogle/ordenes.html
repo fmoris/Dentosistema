@@ -1,0 +1,20 @@
+<div id="inbox">
+  <div class="fab btn-group show-on-hover dropup">
+    <div data-toggle="tooltip" data-placement="left" title="Ir a" style="margin-left: 42px;">
+      <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
+        <span class="fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x fab-backdrop"></i>
+          <i class="fa fa-search fa-stack-1x fa-inverse fab-primary"></i>
+          <i class="fa fa-pencil fa-stack-1x fa-inverse fab-secondary"></i>
+        </span>
+      </button>
+    </div>
+    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+      <li><a ng-click ="irVista('Top')" data-toggle="tooltip" data-placement="left" title="Ir al Inicio"><i class="fa fa-angle-up"></i></a></li>
+      <li><a ng-click ="irVista('Orden')" data-toggle="tooltip" data-placement="left" title="Editar Orden">O</a></li>
+      <li><a ng-click ="irVista('Especifico')" data-toggle="tooltip" data-placement="left" title="Ir a Datos Especificos">E</a></li>
+      <li><a ng-click ="irVista('Trabajos')" data-toggle="tooltip" data-placement="left" title="Ir a Trabajos">T</i></a></li>
+      <!-- <li><a ng-click ="irVista('Acciones')" data-toggle="tooltip" data-placement="left" title="Ir a Acciones">A</i></a></li>  -->         
+    </ul>
+  </div>
+</div>

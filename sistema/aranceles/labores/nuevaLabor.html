@@ -1,0 +1,105 @@
+<style type="text/css">
+
+  h3{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+</style>
+<div class="container">          
+  <form ng-submit="crearLabor()" name="laborForm">
+    <div class="account-wall">          
+      <h1 class="text-center login-title">Nueva Labor</h1>
+        <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Descripcion Labor:</label> 
+          </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control input-lg" ng-model="labor.nombre" placeholder="Descrpcion de la labor" required autofocus>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-lg btn-block" type ="button" ng-click="nombreBase(labor.nombre)">       
+          Actualizar Nombre
+        </button>
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label class="custom-size">Etapa:</label>
+        </div>
+        <div class="col-md-9">    
+          <select class="form-control input-lg"
+            ng-model="labor.etapa"
+            ng-options="item.idEtapa as item.nombre group by item.clasiNom for item in etapas">
+            <option value="" disabled selected>Seleccione una Etapa</option>    
+          </select>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Precio Base:</label> 
+          </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control input-lg" ng-model="labor.base" placeholder="Ingrese Precio Base" required autofocus>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-lg btn-block" type ="button" ng-click="precioBase(labor.base)">       
+          Actualizar precio
+        </button>
+        </div>  
+      </div>
+    </div>
+      <div class="account-wall">
+          
+           <div class="row">
+                  <div class="col-md-1">   
+                      <label class="custom-size">MOSTRAR</label>
+                  <input type = "checkbox" ng-true-value = "'1'" ng-false-value = "'0'" ng-model = "cambio" ng-change="mostrar(cambio)">       
+                    
+                  </div>
+                  <div class="col-md-3">                  
+                    <label class="custom-size">ORIGEN</label>
+                  </div>
+                    <div class="col-md-5">                    
+                    <label class="custom-size">NOMBRE EXTERNO</label>
+                  </div>
+                  <div class="col-md-3">                    
+                    <label class="custom-size">PRECIO PARA ORIGEN</label>
+                  </div>                  
+            </div>
+          
+        <div ng-repeat="item in labor.origenes"> 
+            
+            <div class="row"  ng-show = "item.obsoleto == '0'">
+                  <div class="col-md-1">                  
+                      <input type = "checkbox" class = "form-control input-lg" ng-true-value = "'1'" ng-false-value = "'0'" ng-model = "item.activo">
+                  </div>
+                  <div class="col-md-3">                  
+                    <label class="custom-size">{{item.nombreOrigen | lowercase}}</label>
+                  </div>
+                    <div class="col-md-5">                    
+                    <input type="text" 
+                    placeholder="Nombre"
+                    class="form-control input-lg"
+                    ng-model="item.nombre" 
+                    required />
+                  </div>
+                  <div class="col-md-3">                    
+                    <input type="text" 
+                    placeholder="Valor"
+                    class="form-control input-lg"
+                    ng-model="item.precio" 
+                    required />
+                  </div>
+            </div>
+        </div>
+    </div>       
+   
+      <div class="account-wall">
+      <h3>Guardar labor</h3>
+        <button class="btn btn-lg btn-primary btn-block" ng-disabled="!laborForm.$valid" type="submit">       
+          Nueva Labor
+        </button>
+      </div>
+  </form>
+</div> 

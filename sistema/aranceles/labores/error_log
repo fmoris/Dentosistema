@@ -1,0 +1,107 @@
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 12
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 12
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  include(): Failed opening '../../../../php/coneccion.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 12
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 25
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 26
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 28
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:04:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 12
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 12
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  include(): Failed opening '../../../../php/coneccion.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 12
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 25
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 26
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 28
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[27-Aug-2015 20:05:25 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/nuevaLabor.php on line 34
+[29-Aug-2015 19:53:01 America/Chicago] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 12
+[29-Aug-2015 19:53:01 America/Chicago] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 12
+[29-Aug-2015 19:53:01 America/Chicago] PHP Warning:  include(): Failed opening '../../../../php/coneccion.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 12
+[29-Aug-2015 19:53:01 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 32
+[29-Aug-2015 19:53:01 America/Chicago] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 40
+[29-Aug-2015 19:54:12 America/Chicago] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 12
+[29-Aug-2015 19:54:12 America/Chicago] PHP Warning:  include(../../../../php/coneccion.php): failed to open stream: No such file or directory in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 12
+[29-Aug-2015 19:54:12 America/Chicago] PHP Warning:  include(): Failed opening '../../../../php/coneccion.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 12
+[29-Aug-2015 19:54:12 America/Chicago] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 32
+[29-Aug-2015 19:54:12 America/Chicago] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 40
+[29-Aug-2015 19:55:09 America/Chicago] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/dentosis/public_html/trabajos/sistema/aranceles/labores/editarLabor.php on line 40

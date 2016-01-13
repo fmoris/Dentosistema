@@ -1,0 +1,169 @@
+<link rel="stylesheet" href="sistema/pagos/pagos.css"></link>
+<div class="account-wall">  
+<div class="page-header">
+<h1>Pagos Odontologo: {{nombre}}</h1>
+</div>
+<div>
+    <section>
+        <strong>Pagina:</strong> {{tableParams.page()}}
+    </section>
+    <section>
+        <strong>Datos por Paginas:</strong> {{tableParams.count()}}        
+    </section>    
+    <table ng-table="tableParams"  show-filter="true" template-pagination="custom/pager" class="table">
+        <tr ng-repeat="user in $data">
+			<td data-title="'Orden'" sortable="'orden'" filter="{ 'orden': 'text' }">
+                {{user.orden}}
+            </td>
+            <td data-title="'Clasificacion'" filter="{ 'clasificacion': 'select' }" filter-data="clasificaciones($column)">
+                {{user.clasificacion}}
+            </td> 
+            <td data-title="'Origen'" filter="{ 'origen': 'text' }">
+                {{user.origen}}
+            </td>            
+			<td data-title="'Paciente'" filter="{ 'paciente': 'text' }">
+                {{user.paciente}}
+            </td>
+			<td data-title="'Recepcion'" sortable="'recepcion'">
+                {{user.recepcion}}
+            </td>
+            <td data-title="'Entrega'" sortable="'entrega'">
+                {{user.entrega}}
+            </td>
+            <td data-title="'Valor Total'">
+                ${{user.totalorden}}
+            </td>
+            <td data-title="'Pagar'">
+            <input type="checkbox" class="form-control" ng-model=user.check ng-true-value="'true'" ng-false-value="'false'"> 
+            </td>
+        </tr>
+    </table>
+    <button type="button" ng-click="pagar()" class="btn btn-primary btn-lg btn-block">Pagar
+    </button>    
+     <script type="text/ng-template" id="custom/pager">
+        <ul class="pager ng-cloak">
+            <li ng-repeat="page in pages"
+                ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}"
+                ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
+                <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Atras</a>
+                <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Siguiente &raquo;</a>
+            </li>
+            <li>
+                <div class="btn-group" id="bottom">
+                    <button type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)" class="btn btn-default">10</button>
+                    <button type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)" class="btn btn-default">25</button>
+                    <button type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)" class="btn btn-default">50</button>
+                    <button type="button" ng-class="{'active':params.count() == 100}" ng-click="params.count(100)" class="btn btn-default">100</button>
+                </div>
+            </li>
+        </ul>
+    </script>
+</div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Confirmacion Pago</h4>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">               
+            <table class="table table-bordered table-hover table-responsive table-condensed table-striped">
+            <tr>
+                <th>Orden</th>
+                <th>Clasificacion</th>
+                <th>Origen</th>
+                <th>Paciente</th>
+                <th>Recepcion</th>
+                <th>Entrega</th>
+                <th>Total Orden</th>
+            </tr>
+            <tr ng-repeat="item in seleccion">
+                <td>{{item.orden}}</td>
+                <td>{{item.clasificacion}}</td>
+                <td>{{item.origen}}</td>
+                <td>{{item.paciente}}</td>
+                <td>{{item.recepcion}}</td>
+                <td>{{item.entrega}}</td>
+                <td>{{item.totalorden | currency:"$":0}}</td>
+            </tr>
+            </table>
+          </div>
+
+          <div class="row">
+              <div class="col-md-3"> 
+                <label class="custom-size">Medio de Pago</label>
+              </div>
+            <div class="col-md-9">  
+              <select class="form-control input-lg" ng-model="medioPago" required>
+                <option value="" selected disabled>Seleccione medio de pago</option>
+                <option value="cheque al dia">Cheque al Dia</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="cheque a fecha">Cheque a Fecha</option>
+                <option value="transferencia">Transferencia</option>
+              </select>
+            </div>  
+          </div>
+
+          <div class="row">
+              <div class="col-md-3"> 
+                <label class="custom-size">Fecha</label>
+              </div>
+            <div class="col-md-9">  
+              <input type="date" class="form-control input-lg" ng-model="fechaPago" required>   
+            </div>  
+          </div>
+
+          <div class="row">
+              <div class="col-md-3"> 
+                <label class="custom-size">Total Ordenes</label>
+              </div>
+            <div class="col-md-9">
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                  <input type="text" class="form-control input-lg" ng-model="totalOrdenes" required disabled>
+                </div>        
+            </div>  
+          </div>          
+
+          <div class="row">
+              <div class="col-md-3"> 
+                <label class="custom-size">Descuento</label>
+              </div>
+            <div class="col-md-9">
+              <div class="input-group">
+                <div class="input-group-addon">%</div>
+                  <input type="number" min="1" max="100" class="form-control input-lg" ng-model="descuento" ng-switch = aplicaDescuento()>                  
+              </div>        
+            </div>  
+          </div>
+
+          <div class="row">
+              <div class="col-md-3"> 
+                <label class="custom-size">Total a Pagar</label>
+              </div>
+            <div class="col-md-9">
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control input-lg" ng-model="totalPago" required disabled>
+              </div>
+            </div>  
+          </div>
+          <div class="row">
+              <div class="col-md-3"> 
+                <label class="custom-size">Observacion</label>
+              </div>
+            <div class="col-md-9">              
+              <input type="text" class="form-control input-lg" ng-model="observacion">            
+            </div>  
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="confirmar()" class="btn btn-default" >Confirmar Pago</button>   
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>        
+      </div>
+    </div>
+  </div>
+</div>

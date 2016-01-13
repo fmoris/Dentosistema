@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="sistema/informes/informes.css"></link>
+<div class="container">
+  <div class="row">
+    <div class="account-wall ocultar" id="Acciones">
+      <form ng-submit="envioEjecutor()" class="form-inline" name="impagoEjecutor">                   
+            <h1 class="text-center">Trabajos por Ejecutor</h1>  
+            <div class="row">        
+              <div class="form-group col-md-4">
+                <label>Fecha Inicio</label> 
+                <input id="impago_ejecutor_inicio" type="date" class="form-control input-lg"  ng-model="ejecutor.inicio"required>
+              </div>        
+              <div class="form-group col-md-4"> 
+                <label>Ejecutor</label>        
+                <select id="impago_ejecutor_nombre"
+                        class="form-control input-lg"
+                        ng-model="ejecutor.id"          
+                        ng-options="item.id*1 as item.nombre for item in listaEjecutores" required>
+                        <option value="" disabled selected>Seleccione un Ejecutor</option>                                      
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label>Fecha Fin</label>
+                <input id="impago_ejecutor_fin" type="date" class="form-control input-lg" ng-model="ejecutor.fin" required>
+              </div>
+            </div>                  
+            <div class="row">
+               <div class="col-md-12">
+                  <!-- <button class="btn btn-primary btn-lg btn-block"  data-toggle="modal" ng-disabled="!impagoEjecutor.$valid" data-target="#modalEjecutor">Generar Informe</button> -->
+                <!-- <button type="button" ng-click="imprimirtrabajosEjecutor()" class="btn btn-primary btn-lg btn-block" ng-disabled="!impagoEjecutor.$valid">Generar Informe</button> -->
+                <button type="button" ng-click="imprimirtrabajosEjecutor()" class="btn btn-primary btn-lg btn-block" ng-disabled="!impagoEjecutor.$valid">Ver Documento</button>
+               </div>
+            </div>         
+      </form>
+    </div>
+    <div class="account-wall" ng-show="informeDetalle.id != null">
+      <h4>Ordenes para {{informeDetalle.nombre}}</h4>
+      <h4>entre {{informeDetalle.inicio | dateToISO | date:'dd/MM/yyyy'}} y {{informeDetalle.fin | dateToISO | date:'dd/MM/yyyy'}}</h4>      
+        <div class="">
+          <h4>TRABAJOS EN PROCESO</h4>
+          <div class="row ocultar">          
+            <div ng-show = "ejecutor.proceso" class="col-md-4 col-md-offset-8">
+                <button type = "button" class="btn btn-lg btn-primary" ng-click="ejecutor.proceso = !ejecutor.proceso" >Esconder Trabajos en Proceso</button>
+            </div> 
+            <div ng-hide = "ejecutor.proceso" class="col-md-4 col-md-offset-8">
+                <button type = "button" class="btn btn-lg btn-primary" ng-click="ejecutor.proceso = !ejecutor.proceso" >Mostrar Trabajos En Proceso</button>
+            </div>  
+          </div>         
+            <div ng-show = "ejecutor.proceso" ng-repeat  = "clasi in interminadosEjecutor track by $index">
+                <div ng-hide = vacio(clasi.trabajos)><h4>{{clasi.nombre}}</h4>
+                    <div class="table-responsive">        
+                      <table class="table table-bordered table-hover" >
+                            <tr>
+                                <th>Orden</th>
+                                <th>Etapa</th>
+                                <th>Labor</th>
+                                <th>Fecha Ingreso</th>
+                                <th>Fecha Requerida</th>
+                                <th ng-show = "clasi.id < 3">Numero Piezas</th>
+                                <th ng-hide = "clasi.id < 3">Superior</th>
+                                <th ng-hide = "clasi.id < 3">Inferior</th>
+                                <th>Valor</th>
+
+                            </tr>
+                            <tr ng-repeat="datosEjecutor in clasi.trabajos">
+                                <td>{{datosEjecutor.orden}}</td>          
+                                <td>{{datosEjecutor.etapa}}</td>
+                                <td>{{datosEjecutor.descripcion}}</td>
+                                <td>{{datosEjecutor.fechaIngreso | date : 'dd/MM/yyyy h:mm a'}}</td>
+                                <td>{{datosEjecutor.fechaRequerida | date : 'dd/MM/yyyy h:mm a'}}</td>
+                                <td ng-show = "clasi.id < 3">{{datosEjecutor.cantidad}}</td> 
+                                <td ng-hide = "clasi.id < 3">{{datosEjecutor.superior}}</td>  
+                                <td ng-hide = "clasi.id < 3">{{datosEjecutor.inferior}}</td>  
+                                <td>{{datosEjecutor.total | currency:"$":0}}</td>                                 
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h4 style="border-top:1px solid black; padding-top:2%">TRABAJOS COMPLETADOS</h4>
+            <div ng-repeat = "clasi in terminadosEjecutor track by $index">
+                <div ng-hide = vacio(clasi.trabajos)><h4>{{clasi.nombre}}</h4>
+                    <div class="table-responsive">        
+                      <table class="table table-bordered table-hover" >
+                            <tr>
+                                <th>Orden</th>
+                                <th>Etapa</th>
+                                <th>Labor</th>
+                                <th>Fecha Ingreso</th>
+                                <th>Fecha Requerida</th>
+                                <th>Fecha Termino</th>
+                                <th ng-show = "clasi.id < 3">Numero Piezas</th>
+                                <th ng-hide = "clasi.id < 3">Superior</th>
+                                <th ng-hide = "clasi.id < 3">Inferior</th>
+                                <th>Valor</th>
+
+                            </tr>
+                            <tr ng-repeat="datosEjecutor in clasi.trabajos">
+                                <td>{{datosEjecutor.orden}}</td>          
+                                <td>{{datosEjecutor.etapa}}</td>
+                                <td>{{datosEjecutor.descripcion}}</td>
+                                <td>{{datosEjecutor.fechaIngreso | date : 'dd/MM/yyyy h:mm a' }}</td>
+                                <td>{{datosEjecutor.fechaRequerida | date : 'dd/MM/yyyy h:mm a' }}</td>
+                                <td>{{datosEjecutor.fechaFin | date : 'dd/MM/yyyy h:mm a' }}</td>
+                                <td ng-show = "clasi.id < 3">{{datosEjecutor.cantidad}}</td> 
+                                <td ng-hide = "clasi.id < 3">{{datosEjecutor.superior}}</td>  
+                                <td ng-hide = "clasi.id < 3">{{datosEjecutor.inferior}}</td>  
+                                <td>{{datosEjecutor.total | currency:"$":0}}</td>                                 
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>     
+  </div>
+</div>
+<div class="container ocultar" ng-show="informeDetalle.id != null" id="Imprimir">
+  <div class="row">
+    <div class="account-wall">
+      <h4>Acciones</h4>          
+      <button class="btn btn-lg btn-primary btn-block" ng-click="imprimir()">Imprimir</button>
+      <button class="btn btn-lg btn-primary btn-block" onClick="javascript:history.go(-1);">Volver</button>
+    </div>
+  </div>
+</div>
+
+<div class="row ocultar" data-ng-include src=" 'segmentos/navegadorGoogle/informes.html' ">    
+</div>
+
+ 

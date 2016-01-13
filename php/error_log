@@ -1,0 +1,4 @@
+[26-Aug-2015 18:01:32 UTC] PHP Parse error:  syntax error, unexpected 'or' (T_LOGICAL_OR) in /home/dentosis/public_html/trabajos/php/coneccion.php on line 13
+[26-Aug-2015 18:01:49 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'dentosis_dentobd'@'localhost' (using password: YES) in /home/dentosis/public_html/trabajos/php/coneccion.php on line 12
+[26-Aug-2015 18:03:07 UTC] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, object given in /home/dentosis/public_html/trabajos/php/coneccion.php on line 15
+[26-Aug-2015 18:03:09 UTC] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, object given in /home/dentosis/public_html/trabajos/php/coneccion.php on line 15

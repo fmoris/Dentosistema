@@ -1,0 +1,30 @@
+h4{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+th{
+  text-align: center;
+}
+
+@media print {
+    .myDivToPrint {
+        background-color: white;
+        height: 150%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;        
+    }
+    .account-wall{
+      display: none;
+    }
+      .ocultar{
+        display: none;
+      }
+    
+}

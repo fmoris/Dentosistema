@@ -1,0 +1,127 @@
+<style type="text/css">
+
+  h3{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+</style>
+<div class="container">          
+  <form ng-submit="editarLabor()" name="laborForm">
+    <div class="account-wall">          
+      <h1 class="text-center">Edita Labor</h1>
+        <div class="row">
+            <div class="col-md-3">
+          <label class="custom-size">Clasificacion:</label>
+            </div>
+        <div class="col-md-9">    
+          <select class="form-control input-lg"
+            ng-model="labor.clasi"
+            ng-change= "obtenerLabores(labor.clasi)"
+            >
+              <option value="" disabled selected>Seleccione Clasificacion Para Cargar Lista de Labores</option>  
+              <option value="1" >Protesis Fija</option> 
+              <option value="2" >Colados</option>
+              <option value="3" >Removibles</option> 
+          </select>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-md-3">
+              <label class="custom-size">Labor a Editar:</label>
+            </div>
+            <div class="col-md-9">    
+              <select class="form-control input-lg"
+                ng-model="labor.info"
+                ng-change= "listaOrigenes(labor.info.idLabor)"
+                ng-options="item as item.nombre group by item.nombreEtapa for item in labores"
+                >
+                  <option value="" disabled selected>Seleccione una Labor</option>    
+              </select>
+            </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Nombre Interno Laboratorio:</label> 
+          </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control input-lg" ng-model="labor.info.nombre" placeholder="Descripcion" required autofocus>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="nombreBase(labor.info.nombre)">       
+                Propagar Nombre Interno
+                </button>
+            </div>
+        </div>
+     
+  
+      <div class="row">
+          <div class="col-md-3">         
+            <label class="custom-size">Precio Base:</label> 
+          </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control input-lg" ng-model="labor.info.base" placeholder="Ingrese Precio Base" required autofocus>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-lg btn-primary btn-block" type = "button" ng-click="precioBase(labor.info.base)">       
+          Propagar Precio
+        </button>
+        </div>  
+      </div>
+        
+    </div>
+      <div class="account-wall">
+           <div class="row">
+                  <div class="col-md-1">                  
+                    <label class="custom-size">ACTIVO</label>
+                  </div>
+                  <div class="col-md-3">                  
+                    <label class="custom-size">ORIGEN</label>
+                  </div>
+                    <div class="col-md-5">                    
+                    <label class="custom-size">NOMBRE EXTERNO</label>
+                  </div>
+                  <div class="col-md-3">                    
+                    <label class="custom-size">PRECIO PARA ORIGEN</label>
+                  </div>
+                  
+            </div>
+        <div ng-repeat="item in labor.origenes track by $index">      
+                <div class="row"  ng-show = "item.obsoleto == '0'">
+                  <div class="col-md-1">                  
+                      <input type = "checkbox" ng-true-value = "'1'" ng-false-value = "'0'" ng-model = "item.activo">
+                  </div>
+                  <div class="col-md-3">                  
+                    <label class="custom-size">{{item.nombreOrigen | lowercase}}</label>
+                  </div>
+                    <div class="col-md-5">                    
+                    <input type="text" 
+                    placeholder="Nombre"
+                    class="form-control input-lg"
+                    ng-model="item.nombre" 
+                    required />
+                  </div>
+                  <div class="col-md-3">                    
+                    <input type="text" 
+                    placeholder="Valor"
+                    class="form-control input-lg"
+                    ng-model="item.precio" 
+                    required />
+                  </div>
+                </div>
+                        
+
+                  
+        </div>
+    </div>
+           
+   
+      <div class="account-wall">
+      <h3>Guardar Cambios</h3>
+        <button class="btn btn-lg btn-primary btn-block" ng-disabled="!laborForm.$valid" type="submit">       
+          Editar Labor
+        </button>
+      </div>
+  </form>
+</div> 
